@@ -65,8 +65,10 @@ import ArrowDownIcon from '@/assets/icons/ArrowDownIcon.vue';
 p {
     font-weight: 100;
     color: #fbfbfb;
-    font-size: 1.2rem;
+    font-size: clamp(16px, 1vw, 20px);
     line-height: 1.5rem;
+    padding-right: 1rem;
+    padding-top: 1rem;
 }
 
 .atemporal {
