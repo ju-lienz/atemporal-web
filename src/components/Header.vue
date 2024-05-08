@@ -35,7 +35,7 @@
 <style scoped>
 header {
     width: 100%;
-    background-color: #8c6945be;
+    background-color: #8c6945b7;
     position: absolute;
     top: 0;
     z-index: 100;
