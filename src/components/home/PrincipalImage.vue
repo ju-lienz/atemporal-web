@@ -1,9 +1,10 @@
 <template>
-    <img src="@/assets/imagen-principal.png" :style="{
+    <img src="@/assets/images/imagen3.jpg" :style="{
         width: '100%',
         maxHeight: '100vh',
         filter: 'brightness(0.6)',
         position: 'absolute',
+        objectFit:'cover',
         top: '0',
         zIndex: '-1'
     }">

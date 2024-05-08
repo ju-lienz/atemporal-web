@@ -29,18 +29,18 @@
         </div>
     </header>
 </template>
-<script setup>
+<script setup>  
 
 </script>
 <style scoped>
 header {
     width: 100%;
-    background-color: #935924CC;
+    background-color: #8c6945be;
     position: absolute;
     top: 0;
     z-index: 100;
     color: #FBFBFB;
-    border-bottom: 1px solid #fbfbfb;
+    border-bottom: 1px solid #fbfbfb93;
     transition: all .5s cubic-bezier(0.165, 0.84, 0.44, 1);
     user-select: none;
 }
