@@ -1,8 +1,8 @@
 <template>
     <section>
         <div class="container">
-            <div class="name-section">
-                Nuestros Favoritos
+            <div class="">
+                <h2 class="name-section">Nuestros favoritos</h2>
                 <StarIcon color="#593122" width="40"/>
             </div>
             <div :style=" {
@@ -27,21 +27,17 @@ section {
 }
 
 .container {
-    max-width: 1240px;
-    margin: 0 auto;
     display: flex;
     justify-content: space-between;
 }
 
-.name-section {
-    font-family: 'Arsenica Trial';
-    color: #593122;
-    font-size: 2.5rem;
-    font-weight: 500;
-    /* font-size: clamp(20px, 4rem, 24px) */
-    max-width: 20%;
+
+.container > div {
     display: flex;
-    text-align: center;
-    padding: 1rem;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1rem 1rem 0;
 }
+
+
 </style>
