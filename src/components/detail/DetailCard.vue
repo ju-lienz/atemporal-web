@@ -1,7 +1,9 @@
 <template>
     <div class="container">
         <div class="image-container">
-            <img src="@/assets/images/imageProduct.png" alt="">
+            <img src="@/assets/images/imageProduct.png" alt="" class="primary-image">
+            <img src="@/assets/images/imageProduct.png" alt="" class="secondary-image">
+            <img src="@/assets/images/imageProduct.png" alt="" class="tertiary-image">
         </div>
         <div class="text-container">
             <h1 class="arsenica">Anillo Calabria Golden</h1>
@@ -25,6 +27,35 @@
     display: flex;
 }
 
+.image-container {
+    width: 50%;
+    display: grid;
+    grid-template-columns: 0.5fr 1fr 1fr;
+    grid-template-rows: 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr;
+    gap: 5px 5px;
+    grid-template-areas:
+        "secondary-image primary-image primary-image"
+        "tertiary-image primary-image primary-image"
+        "tertiary-image primary-image primary-image"
+        "tertiary-image primary-image primary-image"
+        "tertiary-image primary-image primary-image";
+}
+
+.primary-image {
+    grid-area: primary-image;
+    width: 100%;
+}
+
+.secondary-image {
+    grid-area: secondary-image;
+    width: 100%;
+}
+
+.tertiary-image {
+    grid-area: tertiary-image;
+    width: 100%;
+}
+
 .text-container {
     padding-left: 2rem;
 }
@@ -33,11 +64,11 @@ h1 {
     font-weight: 600;
 }
 
-.p {
-    font-weight: 600;
+p {
+    font-weight: 400;
 }
 
-.h5 {
+h6 {
     text-decoration: underline;
 }
 </style>
