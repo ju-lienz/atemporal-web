@@ -50,6 +50,10 @@ const handleHover = () => {
     cursor: pointer;
 }
 
+.container{
+    padding-top: 2rem;
+}
+
 
 button {
     position: absolute;

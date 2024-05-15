@@ -68,9 +68,6 @@ ul {
     
 }
 
-
-
-
 .icono {
     aspect-ratio: 1/1;
     height: 1.3rem;

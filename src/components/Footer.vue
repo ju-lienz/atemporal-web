@@ -33,7 +33,7 @@
 footer {
     background-color: #593122;
     color: white;
-    margin-top: 2rem;
+    margin-top: 4rem;
 }
 
 .container {
