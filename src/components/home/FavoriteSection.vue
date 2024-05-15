@@ -1,5 +1,5 @@
 <template>
-    <section>
+    <section id="favorite-section">
         <div class="container">
             <div class="">
                 <h2 class="name-section">Nuestros favoritos</h2>
@@ -32,7 +32,7 @@ section {
 }
 
 
-.container > div {
+.container > div:nth-child(1) {
     display: flex;
     justify-content: space-between;
     align-items: center;

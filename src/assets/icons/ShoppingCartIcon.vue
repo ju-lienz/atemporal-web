@@ -1,5 +1,7 @@
 <template>
-    <svg width="24" height="24" stroke="#FFF" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg :style="{
+        width: `${width}px`
+    }" stroke="#FFF" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path
             d="M2 2H3.74001C4.82001 2 5.67 2.93 5.58 4L4.75 13.96C4.61 15.59 5.89999 16.99 7.53999 16.99H18.19C19.63 16.99 20.89 15.81 21 14.38L21.54 6.88C21.66 5.22 20.4 3.87 18.73 3.87H5.82001"
              stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
@@ -15,6 +17,15 @@
 
 </template>
 <script setup>
-
+const props = defineProps({
+    width: {
+        type: Number,
+        default: 16
+    },
+    color: {
+        type: String,
+        default: "#fff"
+    }
+})
 </script>
 <style scoped></style>
