@@ -38,15 +38,16 @@ header {
     background-color: #8c6945b7;
     position: absolute;
     top: 0;
-    z-index: 100;
+    z-index: 200;
     color: #FBFBFB;
     border-bottom: 1px solid #fbfbfb93;
     transition: all .5s cubic-bezier(0.165, 0.84, 0.44, 1);
     user-select: none;
+
 }
 
 header:hover {
-  box-shadow: inset 0 0 200px rgba(0, 0, 0, 0.2);
+    box-shadow: inset 0 0 200px rgba(0, 0, 0, 0.5);
 }
 
 

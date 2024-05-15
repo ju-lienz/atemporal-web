@@ -2,7 +2,7 @@
     <footer>
         <div class="container">
             <h1 class="atemporal">Atemporal</h1>
-            <ul>
+            <ul class="productos">
                 <li>Productos</li>
                 <li>Joyas</li>
                 <li>Accesorios</li>
@@ -11,8 +11,8 @@
             </ul>
             <ul>
                 <li>Contacto</li>
-                <li>atemporalrelojes@gmail.com</li>
-                <li>+5493856121301</li>
+                <li><SmsIcon />atemporalrelojes@gmail.com</li>
+                <li><CallIcon />+5493856121301</li>
                 <li></li>
             </ul>
             <ul>
@@ -26,7 +26,8 @@
     </footer>
 </template>
 <script setup>
-
+import CallIcon from '@/assets/icons/CallIcon.vue';
+import SmsIcon from '@/assets/icons/SmsIcon.vue';
 </script>
 <style scoped>
 
@@ -41,7 +42,7 @@ footer {
     justify-content: flex-start;
     flex-wrap: wrap;
     padding-top: 2rem;
-    gap: 2rem 10rem;
+    gap: 2rem 8rem;
     letter-spacing: .05rem;
 }
 
@@ -50,15 +51,25 @@ footer {
 }
 
 ul {
-    width: calc((100%/4) - 12rem);
+    width: calc((100%/4) - 16rem);
     min-width: 200px;
 }
 
+
+ul:nth-child(3) {
+    width: calc((100%/4) - 2rem) ;
+
+}
 
 ul > li {
     font-size: .9rem;
     font-weight: 100;
     padding-bottom: .2rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: .5rem;
 }
 
 ul > li:first-child {
