@@ -34,7 +34,7 @@ import SmsIcon from '@/assets/icons/SmsIcon.vue';
 footer {
     background-color: #593122;
     color: white;
-    margin-top: 4rem;
+    /* margin-top: 4rem; */
 }
 
 .container {

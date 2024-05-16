@@ -51,7 +51,7 @@ const handleHover = () => {
 }
 
 .container{
-    padding-top: 2rem;
+    padding: 2rem 0;
 }
 
 

@@ -25,6 +25,7 @@
 .container {
     padding-top: 11rem;
     display: flex;
+    padding-bottom: 11rem ;
 }
 
 .image-container {
