@@ -80,6 +80,7 @@ import ShoppingCartIcon from '@/assets/icons/ShoppingCartIcon.vue';
 h1 {
     font-weight: 600;
     color: #423F3E;
+    font-size: 2.5rem;
 }
 
 .detail {

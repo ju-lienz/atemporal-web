@@ -70,6 +70,8 @@ ul > li {
     align-items: center;
     flex-wrap: nowrap;
     gap: .5rem;
+    
+    color: #FBFBFB;
 }
 
 ul > li:first-child {

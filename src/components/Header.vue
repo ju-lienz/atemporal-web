@@ -1,7 +1,7 @@
 <template>
     <header>
         <div class="header-container">
-            <h1 class="atemporal">Atemporal</h1>
+            <RouterLink :to="{name: 'home'}"><h1 class="atemporal">Atemporal</h1></RouterLink>
             <ul>
                 <li>Relojes</li>
                 <li>Accesorios </li>
@@ -76,7 +76,9 @@ ul {
 
 .atemporal {
     cursor: pointer;
+    font-size: 2rem;
 
 }
+
 
 </style>

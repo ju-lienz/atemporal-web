@@ -19,14 +19,13 @@ import StarIcon from '@/assets/icons/StarIcon.vue'
 <style scoped>
 section {
     background-color: #D9D1CC;
-    color: #593122;
 }
 
 form {
     display: flex;
     padding: 2rem 0;
     justify-content: space-between;
-    align-items: center
+    align-items: center;
 }
 
 h2, .form-group {
@@ -37,6 +36,13 @@ h2 {
     font-size: 2.6rem;
     font-weight: 300;
     padding-right: 10rem;
+    color: #593122;
+}
+
+.arsenica {
+    
+    color: #593122;
+    font-size: 2.6rem;
 }
 
 input {
@@ -49,11 +55,12 @@ input {
     border: 1px solid #593122;
     margin: 0;
     outline: none;
+    color: #593122;
 }
 
-input::selection {
+/* input::selection {
     border: 2px solid #593122;
-}
+} */
 
 .form-group {
     display: flex;
@@ -69,6 +76,7 @@ button {
     border-radius: 10px;
     border: none;
     background-color: #593122;
+    cursor: pointer;
 }
 
 label {
@@ -77,6 +85,8 @@ label {
     display: flex;
     justify-content: flex-start;
     gap: .5rem;
-
+    color: #593122;
 }
+
+
 </style>

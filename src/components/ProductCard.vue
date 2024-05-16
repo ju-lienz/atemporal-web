@@ -1,5 +1,7 @@
 <template>
-    <div class="card">
+    <router-link 
+        :to="{name: 'detail'}"
+    class="card">
         <img src="../assets/images/imagen1.png" :alt="name">
         <h4>{{ name }}</h4>
         <h5>${{ price }}</h5>
@@ -7,7 +9,7 @@
         <button
 
         ><ShoppingCartIcon /> Añadir al carrito</button>
-    </div>
+    </router-link>
 </template>
 <script setup>
 import ShoppingCartIcon from '@/assets/icons/ShoppingCartIcon.vue';
@@ -40,6 +42,7 @@ img {
 .card {
     width: calc((100% / 4) - .75rem);
     max-width: 25%;
+    background-color: #FBFBFB;
     padding: .5rem;
     border: 1px solid #BDB3B180 ;
     border-radius: .5rem;
@@ -49,6 +52,7 @@ img {
     gap: .5rem;
     align-items: center;
     transform: scale(1);
+    color: #2d2d2d;
     transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 

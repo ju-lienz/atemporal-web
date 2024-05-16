@@ -2,10 +2,12 @@
     <div class="container">
         <div class="title">
             <h2 class="name-section">Nuestros productos</h2>
-            <button
+            <router-link
+            class="button"
+            :to="{name: 'productList'}"
             @mouseenter="handleHover"
             @mouseleave="handleHover"
-            >Ver todos los productos<ArrowRightIcon :stroke="stroke"/></button>
+            >Ver todos los productos<ArrowRightIcon :stroke="stroke"/></router-link>
         </div>
         <div class="card-container">
             <ProductCard />
@@ -55,7 +57,7 @@ const handleHover = () => {
 }
 
 
-button {
+.button {
     position: absolute;
     top: 10%;
     right: 0;
@@ -63,7 +65,7 @@ button {
     align-items: center;
     justify-content: center;
     gap: .5rem;
-    background-color: #fff;
+    /* background-color: #fff; */
     padding: .5rem 1rem;
     color: #593122;
     border: 1px solid #593122;
@@ -73,7 +75,7 @@ button {
     transition: all .5s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-button:hover {
+.button:hover {
     background-color: #593122;
     color: white;
 }
