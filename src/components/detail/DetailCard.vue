@@ -44,9 +44,9 @@ import ShoppingCartIcon from '@/assets/icons/ShoppingCartIcon.vue';
     grid-template-areas:
         "secondary-image primary-image primary-image"
         "tertiary-image primary-image primary-image"
-        "tertiary-image primary-image primary-image"
-        "tertiary-image primary-image primary-image"
-        "tertiary-image primary-image primary-image";
+        ". primary-image primary-image"
+        ". primary-image primary-image"
+        ". primary-image primary-image";
 }
 
 .primary-image {
@@ -103,7 +103,7 @@ h6 {
 }
 
 .fees {
-    margin-bottom: 1rem;
+    margin-bottom: 0.4rem;
     font-size: 1.3rem;
     color: #423F3E;
 }
@@ -135,13 +135,13 @@ button {
 }
 
 .cost-shipping {
-    margin-top: 1.3rem;
+    margin-top: 1.5rem;
     margin-bottom: 0.2rem;
 }
 
 .postal-code {
     color: #847E7A;
     font-size: 0.9rem;
-    margin-top: 0.3rem;
+    margin-top: 0.6rem;
 }
 </style>
