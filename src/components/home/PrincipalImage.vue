@@ -4,23 +4,23 @@
         maxHeight: '100vh',
         filter: 'brightness(0.6)',
         position: 'absolute',
-        objectFit:'cover',
+        objectFit: 'cover',
         top: '0',
         zIndex: '-1'
     }">
-    <div class="container-text ">
+    <div class="container ">
         <div class="text-principal">
             <h2 class="arsenica" :style="{
                 color: '#F2D49B',
                 fontSize: '3.5rem',
                 width: '100%'
             }">Expresa tu personalidad con</h2>
-            
-            <StarIcon color="#fbfbfb"/>
+
+            <StarIcon color="#fbfbfb" />
             <h3 class="atemporal">Atemporal</h3>
 
-            
-            <StarIcon color="#fbfbfb"/>
+
+            <StarIcon color="#fbfbfb" />
             <p>Queremos acercarte una exclusiva línea de accesorios seleccionados para ser tu complemento ideal en el
                 día a día o en ocasiones especiales. Nuestra misión es que cada accesorios que elijas sea el reflejo de
                 tu personalidad y estilo</p>
@@ -38,13 +38,13 @@ import StarIcon from '@/assets/icons/StarIcon.vue';
 
 </script>
 <style scoped>
-.container-text {
+/* .container-text {
     z-index: 100;
     display: flex;
     min-height: 100vh;
     align-items: center;
-    padding-left: 5rem;
-}
+    padding-left: 13.5rem;
+} */
 
 .text-principal {
     display: flex;
@@ -83,5 +83,4 @@ p {
     color: #fbfbfb;
     font-weight: 100;
 }
-
 </style>

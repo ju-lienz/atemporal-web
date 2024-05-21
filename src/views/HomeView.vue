@@ -10,8 +10,7 @@ import NewsletterSection from '@/components/home/NewsletterSection.vue';
   <FavoriteSection />
   <ProductsSection />
   <NewsletterSection />
+  <h1 class="text-cyan-700">hola</h1>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>

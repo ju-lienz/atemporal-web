@@ -1,15 +1,27 @@
 <template>
-    <router-link 
-        :to="{name: 'detail'}"
-    class="card">
-        <img src="../assets/images/imagen1.png" :alt="name">
-        <h4>{{ name }}</h4>
-        <h5>${{ price }}</h5>
-        <p> 3 cuotas sin interés de $20.00</p>
-        <button
+    <div class="card">
+        <div class="bg-white shadow-md rounded-lg max-w-sm dark:bg-gray-800 dark:border-gray-700">
+            <a href="#">
+                <img class="rounded-t-lg p-8" src="https://i.ibb.co/KqdgGY4/cosmetic-packaging-mockup-1150-40280.webp"
+                    alt="product image">
+            </a>
+            <div class="px-5 pb-5">
+                <a href="#">
+                    <h3 class="text-gray-900 font-semibold text-xl tracking-tight dark:text-white">Apple Watch Series 7
+                        GPS, Aluminium Case, Starlight Sport</h3>
+                </a>
+                <div class="flex items-center mt-2.5 mb-5">
+                </div>
+                <div class="flex items-center justify-between">
+                    <span class="text-3xl font-bold text-gray-900 dark:text-white">$599</span>
+                    <a href="#"
+                        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add
+                        to cart</a>
+                </div>
+            </div>
+        </div>
+    </div>
 
-        ><ShoppingCartIcon /> Añadir al carrito</button>
-    </router-link>
 </template>
 <script setup>
 import ShoppingCartIcon from '@/assets/icons/ShoppingCartIcon.vue';
@@ -22,7 +34,7 @@ const props = defineProps({
     name: {
         type: String,
         default: 'Anillo Lorena'
-    }, 
+    },
     price: {
         type: Float32Array,
         default: 35.6
@@ -31,20 +43,22 @@ const props = defineProps({
 })
 </script>
 <style scoped>
-img {
+/* img {
     width: 100%;
     max-width: 100%;
     aspect-ratio: 16/9;
     object-fit: cover;
     border-radius: .3rem;
 }
+**/
 
+/* 
 .card {
     width: calc((100% / 4) - .75rem);
     max-width: 25%;
     background-color: #FBFBFB;
     padding: .5rem;
-    border: 1px solid #BDB3B180 ;
+    border: 1px solid #BDB3B180;
     border-radius: .5rem;
     text-align: center;
     display: flex;
@@ -58,20 +72,12 @@ img {
 
 .card:hover {
     transform: scale(1.01);
-    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);}
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
 
-h4  {
-    font-size: 1.4rem;
-}
-h5{
-    font-size: 1.4rem;
-    font-weight: 500;
-}
-p{
-    font-size: 1rem;
-    font-weight: 200;
-}
-button{
+
+
+button {
     width: 100%;
     padding: 0.5rem;
     background-color: #6e3c2a;
@@ -83,8 +89,23 @@ button{
     gap: .5rem;
     cursor: pointer;
 }
+h4 {
+    font-size: 1.4rem;
+}
+
+h5 {
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+
+p {
+    font-size: 1rem;
+    font-weight: 200;
+}
+
+
 
 button:hover {
     background-color: #552e21;
-}
+} */
 </style>
