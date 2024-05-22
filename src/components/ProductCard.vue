@@ -1,22 +1,20 @@
 <template>
     <div class="card">
-        <div class="bg-white shadow-md rounded-lg max-w-sm dark:bg-gray-800 dark:border-gray-700">
-            <a href="#">
-                <img class="rounded-t-lg p-8" src="https://i.ibb.co/KqdgGY4/cosmetic-packaging-mockup-1150-40280.webp"
-                    alt="product image">
+        <div class="bg-white shadow-md rounded-lg p-3 max-w-xs">
+            <a href=" #">
+                <img class="rounded-t-lg" src="../assets/images/imageProduct.png" alt="product image">
             </a>
-            <div class="px-5 pb-5">
+            <div class="">
                 <a href="#">
-                    <h3 class="text-gray-900 font-semibold text-xl tracking-tight dark:text-white">Apple Watch Series 7
-                        GPS, Aluminium Case, Starlight Sport</h3>
+                    <h3 class="text-gray-900 font-semibold text-xl tracking-tight">Anillo Lorena</h3>
                 </a>
-                <div class="flex items-center mt-2.5 mb-5">
-                </div>
-                <div class="flex items-center justify-between">
-                    <span class="text-3xl font-bold text-gray-900 dark:text-white">$599</span>
+
+                <div class="flex items-center justify-between flex-wrap">
+                    <span class="text-xl font-medium text-gray-900">$12.500</span>
                     <a href="#"
-                        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add
-                        to cart</a>
+                        class="text-white bg-primary hover:bg-secondary focus:ring-4 w-full focus:ring-blue-300 font-medium rounded-lg text-xs px-5  py-2 mt-3 text-center">Añadir
+                        al carrito</a>
+
                 </div>
             </div>
         </div>
@@ -52,9 +50,13 @@ const props = defineProps({
 }
 **/
 
-/* 
 .card {
     width: calc((100% / 4) - .75rem);
+    /* background-color: #764838; */
+
+}
+
+/* 
     max-width: 25%;
     background-color: #FBFBFB;
     padding: .5rem;
@@ -68,7 +70,6 @@ const props = defineProps({
     transform: scale(1);
     color: #2d2d2d;
     transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
 
 .card:hover {
     transform: scale(1.01);
