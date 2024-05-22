@@ -6,13 +6,13 @@
             </a>
             <div class="">
                 <a href="#">
-                    <h3 class="text-gray-900 font-semibold text-xl tracking-tight">Anillo Lorena</h3>
+                    <h3 class="text-gray-900 font-semibold text-xl tracking-tight text-center">Anillo Lorena</h3>
                 </a>
 
-                <div class="flex items-center justify-between flex-wrap">
+                <div class="flex items-center justify-center flex-wrap">
                     <span class="text-xl font-medium text-gray-900">$12.500</span>
                     <a href="#"
-                        class="text-white bg-primary hover:bg-secondary focus:ring-4 w-full focus:ring-blue-300 font-medium rounded-lg text-xs px-5  py-2 mt-3 text-center">Añadir
+                        class="text-white bg-primary hover:bg-secondary w-full font-medium rounded-lg text-xs px-5 py-2 mt-3 text-center">Añadir
                         al carrito</a>
 
                 </div>

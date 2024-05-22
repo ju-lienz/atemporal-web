@@ -2,11 +2,16 @@
     <section>
         <div class="container">
             <form action="" method="post">
-                <h2>¿Quieres recibir <span class="arsenica">novedades</span> y <span class="arsenica">descuentos</span> exclusivos?</h2>
+                <h2>¿Quieres recibir <span class="arsenica">novedades</span> y <span class="arsenica">descuentos</span>
+                    exclusivos?</h2>
                 <div class="form-group">
-                    <label ><StarIcon width="16" color="#593122"/>Suscribite a nuestro newsletter</label>
+                    <label>
+                        <StarIcon width="18" color="#593122" />Suscribite a nuestro newsletter
+                    </label>
                     <input type="email" placeholder="Ingresa tu email" name="" id="">
-                    <button><SendIcon :width="24"/></button>
+                    <button>
+                        <SendIcon :width="24" />
+                    </button>
                 </div>
             </form>
         </div>
@@ -28,7 +33,8 @@ form {
     align-items: center;
 }
 
-h2, .form-group {
+h2,
+.form-group {
     width: calc(100%/2);
 }
 
@@ -36,11 +42,12 @@ h2 {
     font-size: 2.6rem;
     font-weight: 300;
     padding-right: 10rem;
+    line-height: 3rem;
     color: #593122;
 }
 
 .arsenica {
-    
+
     color: #593122;
     font-size: 2.6rem;
 }
@@ -80,6 +87,7 @@ button {
 }
 
 label {
+    font-size: 1.3rem;
     width: 100%;
     margin: 0;
     display: flex;
@@ -87,6 +95,4 @@ label {
     gap: .5rem;
     color: #593122;
 }
-
-
 </style>
