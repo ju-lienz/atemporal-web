@@ -34,98 +34,49 @@
             </div>
         </form>
     </div>
-    <!-- <div class="container">
-        <div class="form">
-            <h1>Iniciar sesión</h1>
-            <p>Compra más rápido y lleva el control de tus pedidos de la manera mas cómoda.</p>
-            <h6 class="input-text">E-mail:</h6>
-            <input type="text" name="" id="">
-            <h6 class="input-text">Contraseña</h6>
-            <input type="password">
-            <h6 class="forgot-password">Olvidé mi contraseña</h6>
-            <button>Iniciar sesión</button>
-        </div>
-    </div> -->
 </template>
 
-<script>
-/* import { onBeforeMount, onMounted, ref } from 'vue';
+<script setup>
+import { ref } from 'vue';
 
-onBeforeMount(() => {
-    errores.value = {
-        email: false,
-        pass: false
-    }
+// Variables reactivas para los datos del formulario
+const email = ref('');
+const password = ref('');
+const emailError = ref(false);
+const passwordError = ref(false);
 
-})
-
-const errores = ref({
-    email: false,
-    pass: false
-})
-
-const email = ref("")
-const password = ref("")
-
+// Método que se ejecuta cuando se envía el formulario
 const sendForm = () => {
-    if (!email.includes("@")) {
-
-        errores.value = {
-            ...errores.value,
-            email: true
-        }
+    validateForm();
+    // Si no hay errores de email y contraseña
+    if (!emailError.value && !passwordError.value) {
+        // Envío a la BD
+        console.log('Formulario enviado exitosamente');
     }
-    if (errores.email || errores.pass) return
-} */
-export default {
-    // Datos del componente en js
-    data() {
-        // Retorna un objeto
-        return {
-            email: '',
-            password: '',
-            emailError: false,
-            passwordError: false,
-        };
-    },
-
-    // Metodos del componente
-    methods: {
-        // Se ejecuta cuando se envia el formulario
-        sendForm() {
-            this.validateForm();
-            // Si no hay errores de email y contraseña
-            if (!this.emailError && !this.passwordError) {
-                // Envio a la BD
-                console.log('Formulario enviado exitosamente');
-            }
-        },
-        // Método que realiza la validacion del formulario
-        validateForm() {
-
-            this.emailError = false;
-            this.passwordError = false;
-
-            if (!this.validateEmail(this.email)) {
-                this.emailError = true;
-            }
-
-            if (this.password.length < 6) {
-                this.passwordError = true;
-            }
-        },
-
-        // Método que valida el formato del correo electronico
-        validateEmail(email) {
-            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            //  La función test de la expresión regular verifica si el
-            // email ingresado coincide con el patrón definido.
-            // Si coincide, retorna true, indicando un email válido.
-            return re.test(email);
-        },
-    },
 };
 
+// Método que realiza la validación del formulario
+const validateForm = () => {
+    emailError.value = false;
+    passwordError.value = false;
+
+    if (!validateEmail(email.value)) {
+        emailError.value = true;
+    }
+
+    if (password.value.length < 6) {
+        passwordError.value = true;
+    }
+};
+
+// Método que valida el formato del correo electrónico
+const validateEmail = (email) => {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    // La función test de la expresión regular verifica si el
+    // email ingresado coincide con el patrón definido.
+    // Si coincide, retorna true, indicando un email válido.
+    return re.test(email);
+};
 </script>
 
 <style scoped>
