@@ -1,5 +1,4 @@
 <template>
-
     <div class="w-full max-w-xs container">
         <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" @submit.prevent="sendForm">
             <h1>Iniciar sesión</h1>
@@ -7,18 +6,21 @@
                 <label class="block text-gray-700 text-sm font-medium mb-2" for="username">
                     E-mail:
                 </label>
-                <input
-                    :class="`shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline`"
-                    id="username" type="text" placeholder="Username" v-model="email">
+                <input :class="{ 'border-red-500': emailError }" required id="username" type="text"
+                    placeholder="Username" v-model="email">
+                <p v-if="emailError" class="text-red-500 text-sm mt-1">
+                    Por favor, introduce un e-mail válido.
+                </p>
             </div>
             <div class="mb-6">
                 <label class="block text-gray-700 text-sm font-medium mb-2" for="password">
                     Contraseña:
                 </label>
-                <input
-                    class="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
-                    id="password" type="password" placeholder="******************">
-
+                <input :class="{ 'border-red-500': passwordError }" required id="password" type="password"
+                    placeholder="**********" v-model="password">
+                <p v-if="passwordError" class="text-red-500 text-sm mt-1">
+                    La contraseña debe tener al menos 6 caracteres.
+                </p>
             </div>
             <div class="">
                 <button
@@ -29,12 +31,10 @@
                 <a class="text-right font-bold hover:text-orange-800 text-xs" href="#">
                     Olvidé mi contraseña
                 </a>
-
             </div>
-
         </form>
-
     </div>
+
     <!-- <div class="container">
         <div class="form">
             <h1>Iniciar sesión</h1>
@@ -78,6 +78,55 @@ const sendForm = () => {
     }
     if (errores.email || errores.pass) return
 } */
+export default {
+    // Datos del componente en js
+    data() {
+        // Retorna un objeto
+        return {
+            email: '',
+            password: '',
+            emailError: false,
+            passwordError: false,
+        };
+    },
+
+    // Metodos del componente
+    methods: {
+        // Se ejecuta cuando se envia el formulario
+        sendForm() {
+            this.validateForm();
+            // Si no hay errores de email y contraseña
+            if (!this.emailError && !this.passwordError) {
+                // Envio a la BD
+                console.log('Formulario enviado exitosamente');
+            }
+        },
+        // Método que realiza la validacion del formulario
+        validateForm() {
+
+            this.emailError = false;
+            this.passwordError = false;
+
+            if (!this.validateEmail(this.email)) {
+                this.emailError = true;
+            }
+
+            if (this.password.length < 6) {
+                this.passwordError = true;
+            }
+        },
+
+        // Método que valida el formato del correo electronico
+        validateEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            //  La función test de la expresión regular verifica si el
+            // email ingresado coincide con el patrón definido.
+            // Si coincide, retorna true, indicando un email válido.
+            return re.test(email);
+        },
+    },
+};
+
 </script>
 
 <style scoped>
