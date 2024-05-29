@@ -18,18 +18,20 @@
                 <input
                     class="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
                     id="password" type="password" placeholder="******************">
-                <p class="text-red-500 text-xs italic">Please choose a password.</p>
+
             </div>
-            <div class="flex items-center justify-between">
+            <div class="">
                 <button
-                    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                    class="bg-blue-500 hover:bg-orange-800 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                     type="submit">
-                    Sign In
+                    Iniciar sesión
                 </button>
-                <a class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="#">
-                    Forgot Password?
+                <a class="text-right font-bold hover:text-orange-800 text-xs" href="#">
+                    Olvidé mi contraseña
                 </a>
+
             </div>
+
         </form>
 
     </div>
@@ -79,6 +81,10 @@ const sendForm = () => {
 </script>
 
 <style scoped>
+a {
+    color: #6e3c2a;
+}
+
 h1 {
     font-weight: 600;
 }
