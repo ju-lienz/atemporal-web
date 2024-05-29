@@ -34,7 +34,6 @@
             </div>
         </form>
     </div>
-
     <!-- <div class="container">
         <div class="form">
             <h1>Iniciar sesión</h1>
