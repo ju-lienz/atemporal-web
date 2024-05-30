@@ -2,12 +2,16 @@
     <div class="container mx-auto w-full min-h-screen flex items-center justify-center">
         <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 w-full max-w-xl" @submit.prevent="sendForm">
             <h1>Iniciar sesión</h1>
+            <div v-if="error" class="bg-red-100 border-l-4 border-red-500 text-orange-700 p-2" role="alert">
+                <p class="font-bold m-2">Error</p>
+                <p class="m-2">El mail o contraseña son incorrectos</p>
+            </div>
             <div class="mb-4">
-                <label class="block text-gray-700 text-sm font-medium mb-2" for="username">
+                <label class="block text-gray-700 text-sm font-medium mb-2 pt-3" for="username">
                     E-mail:
                 </label>
                 <input :class="{ '!border-red-500': emailError }" required id="username" type="text"
-                    placeholder="Username" v-model="email">
+                    placeholder="Ingrese su e-mail" v-model="email">
 
             </div>
             <div class="mb-6">
@@ -15,7 +19,7 @@
                     Contraseña:
                 </label>
                 <input :class="{ '!border-red-500': passwordError }" required id="password" type="password"
-                    placeholder="*******" v-model="password">
+                    placeholder="Ingrese su contraseña" v-model="password">
             </div>
             <div class="">
                 <button
@@ -23,7 +27,7 @@
                     type="submit">
                     Iniciar sesión
                 </button>
-                <a class="text-right font-bold hover:text-orange-800 text-xs" href="#">
+                <a class="text-right font-medium hover:text-orange-800 text-xs" href="#">
                     Olvidé mi contraseña
                 </a>
             </div>
@@ -37,14 +41,13 @@ import { ref } from 'vue';
 // Variables reactivas para los datos del formulario
 const email = ref('');
 const password = ref('');
-const emailError = ref(false);
-const passwordError = ref(false);
+const error = ref(false);
 
 // Método que se ejecuta cuando se envía el formulario
 const sendForm = () => {
     validateForm();
     // Si no hay errores de email y contraseña
-    if (!emailError.value && !passwordError.value) {
+    if (!error) {
         // Envío a la BD
         console.log('Formulario enviado exitosamente');
     }
@@ -52,15 +55,14 @@ const sendForm = () => {
 
 // Método que realiza la validación del formulario
 const validateForm = () => {
-    emailError.value = false;
-    passwordError.value = false;
+    error.value = false;
 
     if (!validateEmail(email.value)) {
-        emailError.value = true;
+        error.value = true;
     }
 
     if (password.value.length < 6) {
-        passwordError.value = true;
+        error.value = true;
     }
 };
 
@@ -124,7 +126,7 @@ input {
 p {
     font-size: 1.1rem;
     color: #7A7A7A;
-    margin: 1rem 0rem 1rem 0rem;
+    /*     margin: 1rem 0rem 1rem 0rem; */
 }
 
 /* .container {
