@@ -10,7 +10,7 @@
                 <label class="block text-gray-700 text-sm font-medium mb-2 pt-3" for="username">
                     E-mail:
                 </label>
-                <input :class="{ '!border-red-500': emailError }" required id="username" type="text"
+                <input :class="{ '!border-red-500': error }" required id="username" type="text"
                     placeholder="Ingrese su e-mail" v-model="email">
 
             </div>
@@ -18,7 +18,7 @@
                 <label class="block text-gray-700 text-sm font-medium mb-2" for="password">
                     Contraseña:
                 </label>
-                <input :class="{ '!border-red-500': passwordError }" required id="password" type="password"
+                <input :class="{ '!border-red-500': error }" required id="password" type="password"
                     placeholder="Ingrese su contraseña" v-model="password">
             </div>
             <div class="">
