@@ -1,26 +1,21 @@
 <template>
-    <div class="w-full max-w-xs container">
-        <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" @submit.prevent="sendForm">
+    <div class="container mx-auto w-full min-h-screen flex items-center justify-center">
+        <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 w-full max-w-xl" @submit.prevent="sendForm">
             <h1>Iniciar sesión</h1>
             <div class="mb-4">
                 <label class="block text-gray-700 text-sm font-medium mb-2" for="username">
                     E-mail:
                 </label>
-                <input :class="{ 'border-red-500': emailError }" required id="username" type="text"
+                <input :class="{ '!border-red-500': emailError }" required id="username" type="text"
                     placeholder="Username" v-model="email">
-                <p v-if="emailError" class="text-red-500 text-sm mt-1">
-                    Por favor, introduce un e-mail válido.
-                </p>
+
             </div>
             <div class="mb-6">
                 <label class="block text-gray-700 text-sm font-medium mb-2" for="password">
                     Contraseña:
                 </label>
-                <input :class="{ 'border-red-500': passwordError }" required id="password" type="password"
-                    placeholder="**********" v-model="password">
-                <p v-if="passwordError" class="text-red-500 text-sm mt-1">
-                    La contraseña debe tener al menos 6 caracteres.
-                </p>
+                <input :class="{ '!border-red-500': passwordError }" required id="password" type="password"
+                    placeholder="*******" v-model="password">
             </div>
             <div class="">
                 <button
@@ -132,14 +127,14 @@ p {
     margin: 1rem 0rem 1rem 0rem;
 }
 
-.container {
+/* .container {
     width: 100%;
     border-radius: 15px;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-}
+} */
 
 .form {
     background-color: #FBFBFB;
