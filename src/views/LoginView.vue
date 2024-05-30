@@ -1,10 +1,10 @@
 <script setup>
-import MainForm from '@/components/login/MainForm.vue';
+import LoginForm from '@/components/login/LoginForm.vue';
 
 </script>
 
 <template>
-    <MainForm />
+    <LoginForm />
 </template>
 
 <style scoped></style>
