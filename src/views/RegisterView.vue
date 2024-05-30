@@ -1,9 +1,9 @@
-<template>
-
-</template>
-
 <script setup>
-import MainForm from '@/components/login/LoginForm.vue';
+import RegisterForm from '@/components/register/RegisterForm.vue';
 </script>
+
+<template>
+    <RegisterForm />
+</template>
 
 <style scoped></style>
