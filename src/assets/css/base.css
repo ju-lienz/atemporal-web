@@ -109,11 +109,16 @@
     font-style: italic;
 }
 
+@media (min-width: 1536px) {
+    .container {
+        max-width: 1280px;
+    }
+}
+
 :root {
     font-size: 16px;
     color: black;
     /* letter-spacing: .03rem; */
-
 }
 
 * {
@@ -126,19 +131,14 @@
     list-style: none;
     text-decoration: none;
     font-size: 1rem;
-
-
 }
 
 body {
     background-color: #EFEFEF;
 }
 
-
 .atemporal {
     font-family: 'Catalina Rayden';
-    /* font-family: 'Times New Roman', Times, serif; */
-
     color: #FBFBFB;
     font-weight: 300;
 }
@@ -147,14 +147,9 @@ body {
     font-family: 'Arsenica Trial'
 }
 
-/* body {
-    max-width: 100vw;
-} */
-
 .container {
     margin: 0 auto;
 }
-
 
 .name-section {
     font-family: 'Arsenica Trial';
@@ -164,7 +159,6 @@ body {
     /* font-size: clamp(20px, 4rem, 24px) */
     /* display: flex; */
 }
-
 
 h1 {
     font-size: 2rem;

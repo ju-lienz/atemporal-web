@@ -52,7 +52,6 @@ header:hover {
     box-shadow: inset 0 0 200px rgba(0, 0, 0, 0.5);
 }
 
-
 .header-container {
     width: 100%;
     max-width: 1240px;
@@ -79,6 +78,5 @@ ul {
 .atemporal {
     cursor: pointer;
     font-size: 2rem;
-
 }
 </style>
