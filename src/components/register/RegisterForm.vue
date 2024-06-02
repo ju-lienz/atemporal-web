@@ -34,9 +34,9 @@
                 <label class="block text-sm mb-2">Password</label>
                 <div class="relative">
                     <input id="hs-toggle-password" :type="`${showPass ? 'text' : 'password'}`"
-                        class="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none"
+                    class="border-0 p-3 outline-zinc-400 block w-full text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 rounded-md"
                         placeholder="Enter password" value="12345qwerty">
-                    <button type="button" @click="togglePass" class="absolute top-0 end-0 p-3.5 rounded-e-md">
+                    <button type="button" @click="togglePass" class="absolute top-0 end-0 flex items-center h-full mx-2 rounded-e-md">
                         <svg class="flex-shrink-0 size-3.5 text-gray-400" width="24" height="24" viewBox="0 0 24 24"
                             fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                             stroke-linejoin="round">
