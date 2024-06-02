@@ -14,12 +14,12 @@
             </ul>
             <ul v-if="genders.length != 0">
                 <li>Genero:</li>
-                <li v-for="elm in genders" :key="elm">
+                <li v-for="elm in genders" :key="elm" >
                     <div class="inline-flex items-center gap-2">
                         <div class="relative flex cursor-pointer items-center rounded-full" 
                             data-ripple-dark="true">
                             <input type="checkbox"
-                                class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-secondary transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity hover:border-secondary checked:bg-secondary hover:before:bg-secondary hover:before:opacity-10"
+                                class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-sm border border-secondary transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-8 before:w-8 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity  checked:bg-secondary"
                                 :id="elm" checked />
                             <div
                                 class="pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100">
@@ -31,7 +31,7 @@
                                 </svg>
                             </div>
                         </div>
-                        <label :for="elm">{{elm}}</label>
+                        <label :for="elm" class="cursor-pointer">{{elm}}</label>
                     </div>
 
                 </li>

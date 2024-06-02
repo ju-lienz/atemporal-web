@@ -1,75 +1,74 @@
 <template>
     <div class="container mx-auto w-full min-h-screen flex items-center justify-center">
         <form class="bg-white  shadow-md rounded px-8 pt-6 pb-8 mb-4 w-full max-w-xl" @submit.prevent="sendForm">
-            <h1>Iniciar sesión</h1>
-            <div v-if="error" class="bg-red-100 border-l-4 border-red-500 text-orange-700 p-2" role="alert">
-                <p class="font-bold m-2">Error</p>
-                <p class="m-2">El mail o contraseña son incorrectos</p>
+            <h1  class="mb-4">Iniciar sesión</h1>
+            <div v-if="error" class="bg-red-100 border-l-4 border-red-500 text-orange-700 p-2 mb-4" role="alert">
+                <p class="font-bold m-2 text-sm">Error</p>
+                <p class="m-2 text-sm">El mail o contraseña son incorrectos</p>
             </div>
+
             <div class="mb-4">
-                <label class="block text-gray-700 text-sm font-medium mb-2 pt-3" for="username">
+                <label class="block text-gray-700 text-sm font-medium mb-2" for="username">
                     E-mail:
                 </label>
-                <input :class="{ '!border-red-500': error }" required id="username" type="text"
-                    placeholder="Ingrese su e-mail" v-model="email">
+                <input :class="{ '!border-red-500': error }"
+                    class="border-0 p-3 outline-zinc-400 block w-full text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 rounded-md"
+                    required id="username" type="text" placeholder="Ingrese su e-mail" v-model="email">
 
             </div>
-            <div class="mb-6">
-                <label class="block text-sm mb-2">Password</label>
-                <div class="relative">
-                    <input id="hs-toggle-password" :type="`${showPass ? 'text' : 'password'}`"
-                        class="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none"
-                        placeholder="Enter password" value="12345qwerty">
-                        <button type="button" @click="togglePass" class="absolute top-0 end-0 p-3.5 rounded-e-md">
-                        <svg class="flex-shrink-0 size-3.5 text-gray-400" width="24" height="24" viewBox="0 0 24 24"
-                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                            stroke-linejoin="round">
-                            <path :class="{'hidden': showPass}" d="M9.88 9.88a3 3 0 1 0 4.24 4.24"></path>
-                            <path :class="{'hidden': showPass}"
-                                d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68">
-                            </path>
-                            <path :class="{'hidden': showPass}"
-                                d="M6.61 6.61A13.526 13.526 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61"></path>
-                            <line :class="{'hidden': showPass}" x1="2" x2="22" y1="2" y2="22"></line>
-                            <path :class="{'block': showPass}"
-                                d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path>
-                            <circle :class="{'block': showPass}" cx="12" cy="12" r="3"></circle>
-                        </svg>
-                    </button>
-                </div>
-                <div class="flex justify-between">
-                    <div class="">
-                        <input type="checkbox" name="remember" id="remember">
-                        <label for="remember">Recordarme</label>
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-medium mb-2">Contraseña:</label>
+                
+                <InputPassword @changePassword = "(pass) => password = pass"/>
+
+                <div class="flex justify-between py-2">
+                    <div class="inline-flex items-center gap-2 ">
+                        <div class="relative flex cursor-pointer items-center rounded-full" data-ripple-dark="true">
+                            <input type="checkbox"
+                                class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-sm border border-secondary transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-8 before:w-8 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity  checked:bg-secondary"
+                                id="remember" checked />
+                            <div
+                                class="pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 20 20"
+                                    fill="currentColor" stroke="currentColor" stroke-width="1">
+                                    <path fill-rule="evenodd"
+                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <label for="remember" class="cursor-pointer text-sm">Recordarme</label>
                     </div>
-                    <a href="">Olvidé mi contraseña</a>
+
+                    <a href="#!" class="text-sm text-center block py-2 text-gray-700 hover:text-secondary/60">Olvidé mi
+                        contraseña</a>
                 </div>
             </div>
-            <div class="">
-                <button
-                    class="bg-blue-500 hover:bg-orange-800 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-                    type="submit">
-                    Iniciar sesión
-                </button>
-                <a class="text-right font-medium hover:text-orange-800 text-xs" href="#">
-                    Olvidé mi contraseña
-                </a>
-            </div>
+            <button
+                class="bg-orange-900 block w-full hover:bg-orange-800 text-white font-medium py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                type="submit">
+                Crear cuenta
+            </button>
+
+            <a href="#!" class="text-sm text-center block py-2 text-gray-700 hover:text-secondary/60">¿No tienes una
+                cuenta? Create una</a>
         </form>
     </div>
 </template>
 
 <script setup>
 import { ref } from 'vue';
+import InputPassword from '@/components/login/InputPassword.vue'
 
-const showPass = ref(false)
-
-const togglePass = () => showPass.value = !showPass.value
 
 // Variables reactivas para los datos del formulario
 const email = ref('');
 const password = ref('');
 const error = ref(false);
+
+
+
+
 
 // Método que se ejecuta cuando se envía el formulario
 const sendForm = () => {
