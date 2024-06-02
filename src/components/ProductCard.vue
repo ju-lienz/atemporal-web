@@ -6,7 +6,7 @@
             </a>
             <div class="">
                 <a href="#">
-                    <h3 class="text-gray-900 font-semibold text-xl tracking-tight text-center">Anillo Lorena</h3>
+                    <h3 class="text-gray-900 font-bold text-xl tracking-tight text-center">Anillo Lorena</h3>
                 </a>
 
                 <div class="flex items-center justify-center flex-wrap">
@@ -76,8 +76,6 @@ const props = defineProps({
     box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
 }
 
-
-
 button {
     width: 100%;
     padding: 0.5rem;
@@ -90,6 +88,7 @@ button {
     gap: .5rem;
     cursor: pointer;
 }
+
 h4 {
     font-size: 1.4rem;
 }
@@ -103,8 +102,6 @@ p {
     font-size: 1rem;
     font-weight: 200;
 }
-
-
 
 button:hover {
     background-color: #552e21;
