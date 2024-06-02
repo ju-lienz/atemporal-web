@@ -39,7 +39,7 @@ h2,
 }
 
 h2 {
-    font-size: 2.6rem;
+    font-size: 2.9rem;
     font-weight: 300;
     padding-right: 10rem;
     line-height: 3rem;
@@ -49,14 +49,14 @@ h2 {
 .arsenica {
 
     color: #593122;
-    font-size: 2.6rem;
+    font-size: 2.8rem;
 }
 
 input {
     width: 100%;
     font-size: 1rem;
     max-width: 500px;
-    padding: 1rem;
+    padding: 0.7rem;
     border-radius: .5rem;
     background-color: transparent;
     border: 1px solid #593122;
@@ -65,13 +65,17 @@ input {
     color: #593122;
 }
 
+input::placeholder {
+    color: #9D8277;
+}
+
 /* input::selection {
     border: 2px solid #593122;
 } */
 
 .form-group {
     display: flex;
-    column-gap: 1rem;
+    column-gap: 0.5rem;
     row-gap: 1rem;
     justify-content: flex-start;
     align-items: center;
