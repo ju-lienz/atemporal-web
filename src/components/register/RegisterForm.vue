@@ -39,8 +39,8 @@
                 Crear cuenta
             </button>
             <div class="flex flex-col items-center">
-                <p class="text-s text-center block py-2 text-gray-700 pt-4">¿Ya tienes una cuenta? <router-link
-                        :to="{ name: 'login' }" class="text-s font-medium text-gray-700 hover:text-secondary/90">
+                <p class="text-sm text-center block py-2 text-gray-700 pt-4">¿Ya tienes una cuenta? <router-link
+                        :to="{ name: 'login' }" class="text-sm font-medium text-gray-700 hover:text-secondary/90">
                         Inicia sesión</router-link></p>
             </div>
         </form>

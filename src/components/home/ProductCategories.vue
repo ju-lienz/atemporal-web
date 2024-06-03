@@ -1,15 +1,15 @@
 <template>
     <div class="grid grid-cols-4 grid-rows-4 gap-0">
-        <div class="col-span-2 row-span-4">
-            <CategoryCard :text="cardMarroquineria.text" :image="cardMarroquineria.image" />
+        <div class="col-span-2 row-span-4 overflow-hidden">
+            <CategoryCard :text="cardMarroquineria.text" :two-rows="true" :image="cardMarroquineria.image" />
         </div>
-        <div class="col-span-2 row-span-2 col-start-3">
+        <div class="col-span-2 row-span-2 col-start-3 overflow-hidden">
             <CategoryCard :text="cardRelojes.text" :image="cardRelojes.image" />
         </div>
-        <div class="row-span-2 col-start-3 row-start-3">
+        <div class="row-span-2 col-start-3 row-start-3  overflow-hidden">
             <CategoryCard :text="cardJoyas.text" :image="cardJoyas.image" />
         </div>
-        <div class="row-span-2 col-start-4 row-start-3">
+        <div class="row-span-2 col-start-4 row-start-3  overflow-hidden">
             <CategoryCard :text="cardAccesorios.text" :image="cardAccesorios.image" />
         </div>
     </div>
