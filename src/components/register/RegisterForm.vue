@@ -1,8 +1,8 @@
 <template>
     <div class="container mx-auto w-full min-h-screen flex items-center justify-center">
-        <form action="" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 w-full max-w-xl">
-            <h1 class="font-bold text-2xl text-stone-800 pb-1">Crear cuenta</h1>
-            <p class="text-gray-500 pb-3">Compra más rápido y lleva el control de tus pedidos de la manera mas cómoda.
+        <form action="" class="bg-white shadow-md rounded-xl px-8 pt-6 pb-8 mb-4 w-full max-w-xl">
+            <h1 class="font-bold text-2xl text-stone-800">Crear cuenta</h1>
+            <p class="text-gray-500 pb-6">Compra más rápido y lleva el control de tus pedidos de la manera mas cómoda.
             </p>
             <div class="mb-4">
                 <label for="username" class="block text-gray-700 text-sm font-medium mb-2">Nombre completo:</label>
@@ -25,13 +25,13 @@
             </div>
             <div class="mb-4">
                 <label class="block text-gray-700 text-sm font-medium mb-2">Contraseña:</label>
-                
-                <InputPassword @changePassword = "(pass) => password = pass"/>
+
+                <InputPassword @changePassword="(pass) => password = pass" />
             </div>
             <div class="mb-4">
                 <label class="block text-gray-700 text-sm font-medium mb-2">Repetir contraseña:</label>
-                
-                <InputPassword @changePassword = "(pass) => repeatPassword = pass"/>
+
+                <InputPassword @changePassword="(pass) => repeatPassword = pass" />
             </div>
             <button
                 class="bg-orange-900 block w-full hover:bg-orange-800 text-white font-medium py-2 px-4 rounded focus:outline-none focus:shadow-outline"

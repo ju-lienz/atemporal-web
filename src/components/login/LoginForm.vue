@@ -1,7 +1,7 @@
 <template>
     <div class="container mx-auto w-full min-h-screen flex items-center justify-center">
-        <form class="bg-white  shadow-md rounded px-8 pt-6 pb-8 mb-4 w-full max-w-xl" @submit.prevent="sendForm">
-            <h1  class="mb-4">Iniciar sesión</h1>
+        <form class="bg-white  shadow-md rounded-xl px-8 pt-6 pb-8 mb-4 w-full max-w-xl" @submit.prevent="sendForm">
+            <h1 class="mb-4 font-bold text-2xl text-stone-800">Iniciar sesión</h1>
             <div v-if="error" class="bg-red-100 border-l-4 border-red-500 text-orange-700 p-2 mb-4" role="alert">
                 <p class="font-bold m-2 text-sm">Error</p>
                 <p class="m-2 text-sm">El mail o contraseña son incorrectos</p>
@@ -18,8 +18,8 @@
             </div>
             <div class="mb-4">
                 <label class="block text-gray-700 text-sm font-medium mb-2">Contraseña:</label>
-                
-                <InputPassword @changePassword = "(pass) => password = pass"/>
+
+                <InputPassword @changePassword="(pass) => password = pass" />
 
                 <div class="flex justify-between py-2">
                     <div class="inline-flex items-center gap-2 ">
@@ -49,9 +49,12 @@
                 type="submit">
                 Crear cuenta
             </button>
-
-            <a href="#!" class="text-sm text-center block py-2 text-gray-700 hover:text-secondary/60">¿No tienes una
-                cuenta? Create una</a>
+            <div class="flex flex-col items-center">
+                <p class="text-s text-center block py-2 text-gray-700 pt-4">¿No tienes una cuenta? <a href="#"
+                        class="text-s font-medium text-gray-700 hover:text-secondary/90">Regístrate aquí</a></p>
+            </div>
+            <!-- <a href="#!" class="text-sm text-center block py-2 text-gray-700 hover:text-secondary/60">¿No tienes una
+                cuenta? Create una</a> -->
         </form>
     </div>
 </template>
