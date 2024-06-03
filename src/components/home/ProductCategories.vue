@@ -13,9 +13,11 @@
 import CategoryCard from '@/components/home/CategoryCard.vue';
 
 const cardMarroquineria = {
-    image: '@/assets/images/Marroquineria-categoria.jpg',
+    image: 'Marroquineria-categoria.jpg',
     text: 'Marroquineria',
 };
+
+
 
 </script>
 

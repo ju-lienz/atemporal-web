@@ -51,12 +51,10 @@
             </button>
             <div class="flex flex-col items-center">
                 <p class="text-s text-center block py-2 text-gray-700 pt-4">¿No tienes una cuenta? <router-link
-                        :to="{ name: 'register' }"> <a href="#"
-                            class="text-s font-medium text-gray-700 hover:text-secondary/90">Regístrate
-                            aquí</a></router-link></p>
+                        :to="{ name: 'register' }"
+                        class="text-s font-medium text-gray-700 hover:text-secondary/90">Regístrate
+                        aquí</router-link></p>
             </div>
-            <!-- <a href="#!" class="text-sm text-center block py-2 text-gray-700 hover:text-secondary/60">¿No tienes una
-                cuenta? Create una</a> -->
         </form>
     </div>
 </template>
