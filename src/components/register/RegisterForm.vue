@@ -1,5 +1,5 @@
 <template>
-    <div class="container mx-auto w-full min-h-screen flex items-center justify-center">
+    <div class="container mx-auto w-full min-h-[calc(100vh-6rem)] pt-20 flex items-center justify-center">
         <form action="" class="bg-white shadow-md rounded-xl px-8 pt-6 pb-8 mb-4 w-full max-w-xl">
             <h1 class="font-bold text-2xl text-stone-800">Crear cuenta</h1>
             <p class="text-gray-500 pb-6">Compra más rápido y lleva el control de tus pedidos de la manera mas cómoda.

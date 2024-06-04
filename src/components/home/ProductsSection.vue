@@ -10,6 +10,7 @@
             >Ver todos los productos<ArrowRightIcon :stroke="stroke"/></router-link>
         </div>
         <div class="card-container">
+            <h1>{{ products[0].producto_nombre}}</h1>
             <ProductCard />
             <ProductCard />
             <ProductCard />
@@ -24,12 +25,21 @@
 <script setup>
 import ProductCard from '@/components/ProductCard.vue';
 import ArrowRightIcon from '@/assets/icons/ArrowRightIcon.vue';
-import { ref } from 'vue';
+import { onMounted, ref } from 'vue';
+import { ClienteAxios } from '@/config/ClienteAxios';
 const stroke = ref("#593122")
 const handleHover = () => {
     stroke.value = stroke.value == "#fff" ? "#593122" : "#fff";
 }
 
+const products =  ref([])
+
+onMounted(async() => {
+    const response = await ClienteAxios.get('/Productos/')
+    if (response.status == 200) {
+        products.value = response.data
+    }
+})
 
 </script>
 <style scoped>
