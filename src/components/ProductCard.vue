@@ -6,14 +6,18 @@
             </a>
             <div class="">
                 <a href="#">
-                    <h3 class="text-gray-900 font-bold text-xl tracking-tight text-center">{{ product.producto_nombre }}</h3>
+                    <h3 class="text-gray-900 font-bold text-xl tracking-tight truncate text-center">
+                        {{
+                            product.producto_nombre }}</h3>
                 </a>
 
                 <div class="flex items-center justify-center flex-wrap">
                     <span class="text-xl font-medium text-gray-900">${{ product.producto_precio }}</span>
                     <a href="#"
-                        class="text-white py-2 bg-primary  hover:bg-secondary w-full font-medium rounded-lg text-xs mt-3 flex items-center justify-center gap-2"><ShoppingCartIcon />Añadir
-                        al carrito</a>
+                        class="text-white py-2 bg-primary  hover:bg-secondary w-full font-medium rounded-lg text-xs mt-3 flex items-center justify-center gap-2">
+                        <ShoppingCartIcon />Añadir
+                        al carrito
+                    </a>
 
                 </div>
             </div>
