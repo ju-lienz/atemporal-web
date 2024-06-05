@@ -6,12 +6,11 @@
             <img src="@/assets/images/imageProduct.png" alt="" class="tertiary-image">
         </div>
         <div class="text-container">
-            <h1 class="arsenica">Anillo Calabria Golden</h1>
-            <p class="detail">Aros de plata inflada con baño de oro 18k. El tamaño es de 28mm y su peso es ligero. No
-                produce alergia.
+            <h1 class="arsenica">{{ product.producto_nombre }}</h1>
+            <p class="detail">{{ product.producto_descripcion }}
             </p>
-            <h3 class="price">$9650</h3>
-            <h5 class="fees">3 cuotas sin interés de $3216,3</h5>
+            <h3 class="price">${{ product.producto_precio }}</h3>
+            <!-- <h5 class="fees">3 cuotas sin interés de $3216,3</h5> -->
             <h6 class="payment">Ver formas de pago</h6>
             <button>
                 <ShoppingCartIcon /> Añadir al carrito
@@ -26,6 +25,25 @@
 
 <script setup>
 import ShoppingCartIcon from '@/assets/icons/ShoppingCartIcon.vue';
+import { ClienteAxios } from '@/config/ClienteAxios';
+import { onBeforeMount, ref } from 'vue';
+import { useRoute } from 'vue-router'
+
+const route = useRoute();
+
+const product = ref({})
+
+onBeforeMount(async () => {
+
+    const id = route.params.id;
+    console.log(id);
+    const response = await ClienteAxios.get(`/Productos/${id}`);
+    console.log(response);
+    if (response.status == 200) {
+        product.value = response.data
+    }
+});
+
 </script>
 
 <style scoped>
