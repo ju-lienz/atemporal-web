@@ -3,7 +3,7 @@
         <div class="w-8/12">
 
             <h2 class="flex gap-2">
-                <ShoppingCartIcon color="gray-700" />Mi carrito
+                <ShoppingCartIcon color="#3d3d3d" width=24 />Mi carrito
             </h2>
             <Product />
             <Product />

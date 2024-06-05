@@ -10,15 +10,7 @@
             >Ver todos los productos<ArrowRightIcon :stroke="stroke"/></router-link>
         </div>
         <div class="card-container">
-            <h1>{{ products[0].producto_nombre}}</h1>
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
+            <ProductCard  v-for="(product, index) in products" :key="index" :product="product" :zoom="true"/>
         </div>
     </div>
 </template>
