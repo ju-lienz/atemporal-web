@@ -40,4 +40,22 @@ const cardAccesorios = {
 
 </script>
 
-<style scoped></style>
+<style scoped>
+.button {
+    position: absolute;
+    top: 10%;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+    /* background-color: #fff; */
+    padding: .5rem 1rem;
+    color: #593122;
+    border: 1px solid #593122;
+    border-radius: 3rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all .5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+</style>
