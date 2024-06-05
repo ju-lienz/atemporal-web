@@ -2,10 +2,10 @@
     <section id="favorite-section">
         <div class="container">
             <div class="">
-                <h2 class="name-section">Nuestros favoritos</h2>
-                <StarIcon color="#593122" width="40"/>
+                <h2 class="name-section leading-[1.2]">Nuestros favoritos</h2>
+                <StarIcon color="#593122" width="40" />
             </div>
-            <div :style=" {
+            <div :style="{
                 display: 'flex'
             }">
                 <FavoriteCard />
@@ -32,12 +32,10 @@ section {
 }
 
 
-.container > div:nth-child(1) {
+.container>div:nth-child(1) {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1rem 1rem 1rem 0;
 }
-
-
 </style>
