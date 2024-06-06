@@ -1,5 +1,8 @@
 <template>
-    <div
+    <router-link 
+        :to="{ name: 'detail', params: { id: product.producto_id } }"
+        
+
         :class="`card bg-white shadow-md rounded-lg  max-w-xs overflow-hidden hover:shadow-lg ${zoom ? 'hover:scale-[1.02]' : ''} transition-all `">
         <img class="w-full h-40 object-cover" src="../assets/images/imageProduct.png" alt="product image">
         <div class="p-3 ">
@@ -13,8 +16,7 @@
                 <ShoppingCartIcon />Añadir al carrito
             </a>
         </div>
-    </div>
-
+    </router-link>
 </template>
 <script setup>
 import ShoppingCartIcon from '@/assets/icons/ShoppingCartIcon.vue';
