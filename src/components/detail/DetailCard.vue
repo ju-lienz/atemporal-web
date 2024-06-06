@@ -36,7 +36,6 @@ const product = ref({})
 onBeforeMount(async () => {
 
     const id = route.params.id;
-    console.log(id);
     const response = await ClienteAxios.get(`/Productos/${id}`);
     console.log(response);
     if (response.status == 200) {

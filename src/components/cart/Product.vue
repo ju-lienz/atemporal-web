@@ -9,14 +9,17 @@
             >Eliminar</button>
         </div>
         <div class="flex items-start w-2/12 mt-2">
-            <p class="bg-primary aspect-square w-8 text-white rounded-full flex items-center justify-center cursor-pointer">-</p>
+            <p class="bg-primary  hover:bg-secondary  transition aspect-square w-8 text-white rounded-full flex items-center justify-center cursor-pointer">-</p>
             <p class="flex h-8 items-center px-4">2</p>
-            <p class="bg-primary aspect-square w-8 text-white rounded-full flex items-center justify-center cursor-pointer">+</p>
+            <p class="bg-primary  hover:bg-secondary transition aspect-square w-8 text-white rounded-full flex items-center justify-center cursor-pointer">+</p>
         </div>
         <h5 class="font-semibold text-xl w-3/12 px-4 text-right mt-2">$312.12</h5>
     </div>
 </template>
 <script setup>
+
+
+
 </script>
 <style scoped>
     
