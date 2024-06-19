@@ -26,13 +26,13 @@
 <script setup>
 import ProductCard from '@/components/ProductCard.vue';
 import FilterIcon from '@/assets/icons/FilterIcon.vue';
-import { computed, ref ,onMounted } from 'vue';
+import { computed, ref, onMounted } from 'vue';
 import CheckInput from '@/components/listProduct/CheckInput.vue';
 import { ClienteAxios } from '@/config/ClienteAxios';
 
-const products =  ref([])
+const products = ref([])
 
-onMounted(async() => {
+onMounted(async () => {
     const response = await ClienteAxios.get('/Productos/')
     if (response.status == 200) {
         products.value = response.data
@@ -58,10 +58,6 @@ const materials = computed(() => {
 const doUppercase = data => {
     return data[0].toUpperCase() + data.slice(1)
 }
-
-
-
-
 
 </script>
 <style scoped>
