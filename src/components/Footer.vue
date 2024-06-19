@@ -2,22 +2,37 @@
     <footer>
         <div class="container">
             <h1 class="atemporal">Atemporal</h1>
-            <ul class="productos">
-                <li>Productos</li>
-                <li>Joyas</li>
-                <li>Accesorios</li>
-                <li>Relojes</li>
-                <li>Marroquinería</li>
+            <ul class="list-none">
+                <RouterLink :to="{ name: 'productList' }">
+                    <li class="font-bold text-lg mb-2">Productos</li>
+                </RouterLink>
+                <li class="mb-2">
+                    <a href="">Joyas</a>
+                </li>
+                <li class="mb-2">
+                    <a href="">Accesorios</a>
+                </li>
+                <li class="mb-2">
+                    <a href="">Relojes</a>
+                </li>
+                <li class="mb-2">
+                    <a href="">Marroquinería</a>
+                </li>
             </ul>
-            <ul>
-                <li>Contacto</li>
-                <li><SmsIcon />atemporalrelojes@gmail.com</li>
-                <li><CallIcon />+5493856121301</li>
-                <li></li>
+            <ul class="">
+                <li class="font-bold text-lg">Contacto</li>
+                <li class="mb-2">
+                    <SmsIcon />atemporalrelojes@gmail.com
+                </li>
+                <li class="mb-2">
+                    <CallIcon />+5493856121301
+                </li>
             </ul>
-            <ul>
-                <li>Ayuda</li>
-                <li>Contactanos</li>
+            <ul class="">
+                <li class="font-bold text.lg">Ayuda</li>
+                <a href="">
+                    <li class="mb-2">Contáctanos</li>
+                </a>
             </ul>
             <div class="bottom">
                 Atemporal &copy; 2024. Todos los derechos reservados.
@@ -30,11 +45,9 @@ import CallIcon from '@/assets/icons/CallIcon.vue';
 import SmsIcon from '@/assets/icons/SmsIcon.vue';
 </script>
 <style scoped>
-
 footer {
     background-color: #593122;
     color: white;
-    /* margin-top: 4rem; */
 }
 
 .container {
@@ -55,28 +68,25 @@ ul {
     min-width: 200px;
 }
 
-
 ul:nth-child(3) {
-    width: calc((100%/4) - 2rem) ;
+    width: calc((100%/4) - 2rem);
 
 }
 
-ul > li {
-    font-size: .9rem;
-    font-weight: 100;
-    padding-bottom: .2rem;
+ul>li {
+    /* font-size: .9rem;
+    font-weight: 100; */
     display: flex;
     justify-content: flex-start;
     align-items: center;
     flex-wrap: nowrap;
     gap: .5rem;
-    
+
     color: #FBFBFB;
 }
 
-ul > li:first-child {
-    font-size: 1rem;
-    font-weight: 400;
+ul>li:first-child {
+    /* font-weight: 400; */
     margin-bottom: 1rem;
 }
 
@@ -89,4 +99,4 @@ ul > li:first-child {
     font-weight: 200;
 
 }
-</style>    
+</style>

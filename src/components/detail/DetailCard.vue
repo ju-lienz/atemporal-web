@@ -17,7 +17,9 @@
             </button>
             <p class="cost-shipping">Costo de envío:</p>
             <input type="text">
-            <h6 class="postal-code">No sé mi código postal</h6>
+            <a href="">
+                <h6 class="postal-code">No sé mi código postal</h6>
+            </a>
         </div>
     </div>
 
