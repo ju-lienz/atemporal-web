@@ -35,23 +35,21 @@
 
 
     <!-- HEADER MOBILE -->
-    <header class="flex lg:hidden !fixed top-0 left-0 justify-between items-center px-4 py-1">
-        <MenuIcon color="white" class="cursor-pointer" @click="menu = !menu" />
-        <RouterLink :to="{ name: 'home' }" class="origin-left transition-all" :class="{
-            'scale-x-0': search,
-            'scale-x-full': !search,
-        }">
-            <h1 class="atemporal">Atemporal</h1>
-        </RouterLink>
-        <div class="flex">
+    <header class="1lg:hidden !fixed top-0 left-0 justify-between items-center px-4 py-1 overflow-hidden transition-all">
+        <div class="flex justify-between w-full items-center">
+            <MenuIcon color="white" class="cursor-pointer w-1/12" @click="menu = !menu" />
+            <RouterLink :to="{ name: 'home' }">
+                <h1 class="atemporal">Atemporal</h1>
+            </RouterLink>
             <SearchIcon color="white" class="cursor-pointer" @click="search = !search" />
-            <div class=" transition origin-right" :class="{
-                'scale-x-0 w-0': !search,
-                'scale-x-full w-auto': search,
-            }">
-                <input type="text">
-                <CloseIcon :size="14" />
-            </div>
+        </div>
+        <div class=" transition-all ease-linear origin-top overflow-hidden h-auto" :class="{
+            'scale-y-0 max-h-0 p-0': !search,
+            'scale-y-100 max-h-full py-1': search,
+
+        }" >
+            <input type="text" class="w-full p-2 pr-10 rounded-md text-primary">
+            <CloseIcon color="fill-primary" :size="14" class="absolute top-1/2 right-3 -translate-y-1/2 " @click="search = false"/>
         </div>
 
     </header>
