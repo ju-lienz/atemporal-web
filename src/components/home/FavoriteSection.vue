@@ -1,13 +1,11 @@
 <template>
-    <section id="favorite-section">
-        <div class="container">
+    <section id="favorite-section" class="overflow-hidden max-w-full">
+        <div class="container lg:flex block justify-between">
             <div class="">
-                <h2 class="name-section leading-[1.2]">Nuestros favoritos</h2>
-                <StarIcon color="#593122" width="40" />
+                <h2 class="name-section !text-3xl lg:!text-4xl leading-[1.2]">Nuestros favoritos</h2>
+                <StarIcon color="#593122" width="30" />
             </div>
-            <div :style="{
-                display: 'flex'
-            }">
+            <div class="flex flex-col md:flex-row">
                 <FavoriteCard />
                 <FavoriteCard />
                 <FavoriteCard />
@@ -26,10 +24,7 @@ section {
     background-color: #D9D1CC;
 }
 
-.container {
-    display: flex;
-    justify-content: space-between;
-}
+
 
 
 .container>div:nth-child(1) {

@@ -1,17 +1,21 @@
 <template>
     <section>
-        <div class="container">
-            <form action="" method="post">
-                <h2>¿Quieres recibir <span class="arsenica">novedades</span> y <span class="arsenica">descuentos</span>
+        <div class="container px-4 !py-4">
+            <form action="" method="post" class="flex flex-col lg:flex-row w-full">
+                <h2 class="!w-full !text-2xl !p-0 md:!text-5xl lg:!pr-40">¿Quieres recibir <span
+                        class="arsenica md:!text-5xl !text-2xl">novedades</span> y <span
+                        class="arsenica md:!text-5xl !text-2xl">descuentos</span>
                     exclusivos?</h2>
-                <div class="form-group">
-                    <label>
+                <div class="form-group !w-full lg:w-[calc(100%/2)] my-4">
+                    <label class="!text-base">
                         <StarIcon width="18" color="#593122" />Suscribite a nuestro newsletter
                     </label>
-                    <input type="email" placeholder="Ingresa tu email" name="" id="">
-                    <button>
-                        <SendIcon :width="24" />
-                    </button>
+                    <div class="flex gap-2 w-full">
+                        <input type="email" placeholder="Ingresa tu email" name="" id="">
+                        <button>
+                            <SendIcon :width="24" />
+                        </button>
+                    </div>
                 </div>
             </form>
         </div>
@@ -28,19 +32,18 @@ section {
 
 form {
     display: flex;
-    padding: 2rem 0;
     justify-content: space-between;
     align-items: center;
 }
 
 h2,
 .form-group {
-    width: calc(100%/2);
+    /* width: calc(100%/2); */
 }
 
 h2 {
     font-size: 2.9rem;
-    font-weight: 300;
+    font-weight: 100;
     padding-right: 10rem;
     line-height: 3rem;
     color: #593122;
@@ -55,7 +58,7 @@ h2 {
 input {
     width: 100%;
     font-size: 1rem;
-    max-width: 500px;
+    /* max-width: 500px; */
     padding: 0.7rem;
     border-radius: .5rem;
     background-color: transparent;
@@ -75,8 +78,7 @@ input::placeholder {
 
 .form-group {
     display: flex;
-    column-gap: 0.5rem;
-    row-gap: 1rem;
+    gap: .5rem;
     justify-content: flex-start;
     align-items: center;
     flex-wrap: wrap;

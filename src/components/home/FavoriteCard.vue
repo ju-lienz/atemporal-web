@@ -1,5 +1,5 @@
 <template>
-    <div class="card-container">
+    <div class="card-container !max-w-full !px-0 md:!px-4 border-t md:border-l md:border-y-0 border-t-primary/30 first-of-type:border-t-0 first-of-type:border-l-0  md:border-l-primary/30">
         <div class="product-desc">
             <h3>Anillo Louise</h3>
             <p>Anillo enchapado en oro 18k hipoalergénico</p>
@@ -13,11 +13,9 @@
 <style scoped>
 
 .card-container {
-    max-width: 33%;
     display: flex;
     padding: 1rem;
     gap: 1rem;
-    border-left: 1px solid #55555546;
 }
 
 

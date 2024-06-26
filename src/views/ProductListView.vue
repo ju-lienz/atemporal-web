@@ -1,24 +1,34 @@
 <template>
-    <div class="container">
-        <div class="filters">
+    <div class="container flex flex-col lg:flex-row !px-4 !py-16 md:!py-32">
+        <div class="filters w-1/5 hidden lg:block">
             <div class="filter-title">
-                <FilterIcon width="20" />Filtros
+                <FilterIcon :width="20" />Filtros
             </div>
-            <ul v-if="types.length != 0">
+            <ul v-if="types.length != 0" class="ul">
                 <li>Tipo:</li>
                 <CheckInput v-for="(elm, index) in types" :key="index" :elm="elm" />
             </ul>
-            <ul v-if="genders.length != 0">
+            <ul v-if="genders.length != 0" class="ul">
                 <li>Genero:</li>
                 <CheckInput v-for="(elm, index) in genders" :key="index" :elm="elm" />
             </ul>
-            <ul v-if="materials.length != 0">
+            <ul v-if="materials.length != 0" class="ul">
                 <li>Material:</li>
                 <CheckInput v-for="(elm, index) in materials" :key="index" :elm="elm" />
             </ul>
 
         </div>
-        <div class="product-container">
+
+
+        <div class="flex lg:hidden flex-wrap gap-y-4 py-4">
+            <div class="w-full flex gap-2 font-semibold">
+                <FilterIcon :width="20" class="lg:hidden" />Filtros
+            </div>
+            <FilterList :lista="types" title="Tipo" :listOpen="listStore.type"  class="w-1/3 border p-2 bg-white"/>
+            <FilterList :lista="materials" title="Material"  :listOpen="listStore.gender" class="w-1/3 border p-2 bg-white" />
+            <FilterList :lista="genders" title="Género"  :listOpen="listStore.materials" class="w-1/3 border p-2 bg-white" />
+        </div>
+        <div class="product-container w-full lg:w-4/5">
             <ProductCard v-for="(product, index) in products" :key="index" :product="product" />
         </div>
     </div>
@@ -29,6 +39,10 @@ import FilterIcon from '@/assets/icons/FilterIcon.vue';
 import { computed, ref, onMounted } from 'vue';
 import CheckInput from '@/components/listProduct/CheckInput.vue';
 import { ClienteAxios } from '@/config/ClienteAxios';
+import FilterList from '@/components/listProduct/FilterList.vue';
+import { useListStore } from '@/stores/listStore';
+
+const listStore = useListStore()
 
 const products = ref([])
 
@@ -62,13 +76,10 @@ const doUppercase = data => {
 </script>
 <style scoped>
 .container {
-    padding: 10rem 0 5rem;
-    display: flex;
     user-select: none;
 }
 
 .filters {
-    width: 20%;
     max-width: 400px;
 }
 
@@ -82,17 +93,16 @@ const doUppercase = data => {
 
 .product-container {
     display: flex;
-    width: 80%;
     flex-wrap: wrap;
     gap: .5rem;
     align-items: flex-start
 }
 
-ul:first-of-type {
+.ul:first-of-type {
     margin-top: 2rem;
 }
 
-ul {
+.ul {
     display: flex;
     flex-direction: column;
     gap: .5rem;
@@ -101,12 +111,12 @@ ul {
     margin-right: 2rem;
 }
 
-li:first-child {
+.ul li:first-child {
     font-weight: 500;
     margin: .5rem 0;
 }
 
-li {
+.ul li {
     display: flex;
     gap: .5rem;
 }

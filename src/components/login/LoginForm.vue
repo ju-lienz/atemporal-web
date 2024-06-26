@@ -1,5 +1,5 @@
 <template>
-    <div class="container mx-auto w-full min-h-screen flex items-center justify-center">
+    <div class="container  mx-auto w-full min-h-screen flex items-center justify-center">
         <form class="bg-white  shadow-md rounded-xl px-8 pt-6 pb-8 mb-4 w-full max-w-xl" @submit.prevent="sendForm">
             <h1 class="mb-4 font-bold text-2xl text-stone-800">Iniciar sesión</h1>
             <div v-if="error" class="bg-red-100 border-l-4 border-red-500 text-orange-700 p-2 mb-4" role="alert">

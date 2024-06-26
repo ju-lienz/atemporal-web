@@ -1,27 +1,18 @@
 <template>
-    <img src="@/assets/images/imagen3.jpg" :style="{
-        width: '100%',
-        maxHeight: '100vh',
-        filter: 'brightness(0.6)',
-        position: 'absolute',
-        objectFit: 'cover',
-        top: '0',
-        zIndex: '-1'
-    }">
+    <img src="@/assets/images/imagen3.jpg" class="w-full h-dvh brightness-50 absolute object-cover top-0 z-0">
     <div class="container ">
         <div class="text-principal">
-            <h2 class="arsenica" :style="{
-                color: '#F2D49B',
-                fontSize: '3.5rem',
-                width: '100%'
+            <h2 class="arsenica text-2xl lg:text-5xl w-full text-center" :style="{
+                color: '#F2D49B'
             }">Expresa tu personalidad con</h2>
 
             <StarIcon color="#fbfbfb" />
-            <h3 class="atemporal">Atemporal</h3>
+            <h3 class="atemporal !text-5xl lg:text-8xl">Atemporal</h3>
 
 
             <StarIcon color="#fbfbfb" />
-            <p>Queremos acercarte una exclusiva línea de accesorios seleccionados para ser tu complemento ideal en el
+            <p class="px-4 text-center lg:px-0 lg:text-left">Queremos acercarte una exclusiva línea de accesorios seleccionados para ser tu
+                complemento ideal en el
                 día a día o en ocasiones especiales. Nuestra misión es que cada accesorios que elijas sea el reflejo de
                 tu personalidad y estilo</p>
             <div class="scroll">
@@ -58,19 +49,16 @@ import StarIcon from '@/assets/icons/StarIcon.vue';
 }
 
 p {
+    font-family: "Roboto", sans-serif;
     font-weight: 100;
+    font-style: normal;
     color: #fbfbfb;
-    font-size: clamp(16px, 1vw, 20px);
+    font-size: clamp(14px, 1vw, 20px);
     line-height: 1.5rem;
     padding-right: 1rem;
     padding-top: 1rem;
 }
 
-.atemporal {
-    font-size: 5rem;
-    width: 100%;
-    text-align: center
-}
 
 .scroll {
     position: absolute;

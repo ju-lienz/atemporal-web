@@ -1,17 +1,19 @@
 <template>
-    <div class="container">
+    <div class="container px-4">
         <div class="title">
-            <h2 class="name-section">Nuestros productos</h2>
-            <router-link
-            class="button"
-            :to="{name: 'productList'}"
-            @mouseenter="handleHover"
-            @mouseleave="handleHover"
-            >Ver todos los productos<ArrowRightIcon :stroke="stroke"/></router-link>
+            <h2 class="name-section !text-3xl md:!text-4xl">Nuestros productos</h2>
+            <router-link class="button !hidden md:!flex" :to="{ name: 'productList' }" @mouseenter="handleHover"
+                @mouseleave="handleHover">Ver todos los productos
+                <ArrowRightIcon :stroke="stroke" />
+            </router-link>
         </div>
-        <div class="card-container">
-            <ProductCard  v-for="(product, index) in products" :key="index" :product="product" :zoom="true"/>
+        <div class="card-container md:mb-4 gap-2 md:gap-3">
+            <ProductCard v-for="(product, index) in products" :key="index" :product="product" :zoom="true" />
         </div>
+        <router-link class="button mt-2 mb-4 !relative md:!hidden" :to="{ name: 'productList' }" @mouseenter="handleHover"
+            @mouseleave="handleHover">Ver todos los productos
+            <ArrowRightIcon :stroke="stroke" />
+        </router-link>
     </div>
 </template>
 <script setup>
@@ -24,9 +26,9 @@ const handleHover = () => {
     stroke.value = stroke.value == "#fff" ? "#593122" : "#fff";
 }
 
-const products =  ref([])
+const products = ref([])
 
-onMounted(async() => {
+onMounted(async () => {
     const response = await ClienteAxios.get('/Productos/')
     if (response.status == 200) {
         products.value = response.data
@@ -48,15 +50,12 @@ onMounted(async() => {
 .card-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem;
     flex-direction: row;
     justify-content: flex-start;
     cursor: pointer;
 }
 
-.container{
-    padding: 2rem 0;
-}
+
 
 
 .button {
@@ -81,6 +80,4 @@ onMounted(async() => {
     background-color: #593122;
     color: white;
 }
-
-
 </style>

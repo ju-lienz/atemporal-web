@@ -1,6 +1,6 @@
 <template>
-    <router-link :to="{ name: 'detail', params: { id: product.producto_id } }"
-        :class="`card bg-white shadow-md m-1 rounded-lg max-w-xs overflow-hidden hover:shadow-lg ${zoom ? 'hover:scale-[1.02]' : ''} transition-all `">
+    <router-link :to="{ name: 'detail', params: { id: product.id } }"
+        :class="`w-[calc(100%/2-.75rem)] md:w-[calc(100%/3-1rem)] lg:w-[calc(100%/4-1.1rem)] bg-white shadow-md m-1 rounded-lg overflow-hidden hover:shadow-lg ${zoom ? 'hover:scale-[1.02]' : ''} transition-all `">
         <img class="w-full h-40 object-cover" src="../assets/images/imageProduct.png" alt="product image">
         <div class="p-3">
             <h3 class="text-gray-900 font-bold text-xl tracking-tight truncate">{{ product.producto_nombre

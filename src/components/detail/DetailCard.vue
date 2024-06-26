@@ -1,12 +1,12 @@
 <template>
-    <div class="container">
-        <div class="image-container">
+    <div class="container !py-20 flex-wrap">
+        <div class="image-container w-full md:w-1/2">
             <img src="@/assets/images/imageProduct.png" alt="" class="primary-image">
             <img src="@/assets/images/imageProduct.png" alt="" class="secondary-image">
             <img src="@/assets/images/imageProduct.png" alt="" class="tertiary-image">
         </div>
-        <div class="text-container">
-            <h1 class="arsenica">{{ product.producto_nombre }}</h1>
+        <div class="text-container pt-4 md:pl-10 w-full md:w-1/2 md:max-w-lg">
+            <h1 class="arsenica text-2xl">{{ product.producto_nombre }}</h1>
             <p class="detail">{{ product.producto_descripcion }}
             </p>
             <h3 class="price">${{ product.producto_precio }}</h3>
@@ -49,13 +49,10 @@ onBeforeMount(async () => {
 
 <style scoped>
 .container {
-    padding-top: 11rem;
     display: flex;
-    padding-bottom: 11rem;
 }
 
 .image-container {
-    width: 50%;
     display: grid;
     grid-template-columns: 0.5fr 1fr 1fr;
     grid-template-rows: 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr;
@@ -83,10 +80,7 @@ onBeforeMount(async () => {
     width: 100%;
 }
 
-.text-container {
-    padding-left: 2rem;
-    width: 40%;
-}
+
 
 .payment {
     font-size: 1rem;
@@ -99,7 +93,6 @@ onBeforeMount(async () => {
 h1 {
     font-weight: 600;
     color: #423F3E;
-    font-size: 2.5rem;
 }
 
 .detail {
@@ -109,21 +102,18 @@ h1 {
 
 h6 {
     text-decoration: underline;
-    font-family: 1.5rem;
     color: #423F3E;
     padding-bottom: 2rem
 }
 
 .price {
     padding: 1.5rem 0rem 1.5rem 0rem;
-    font-size: 2.3rem;
     font-weight: 600;
     color: #423F3E;
 }
 
 .fees {
     margin-bottom: 0.4rem;
-    font-size: 1.3rem;
     color: #423F3E;
 }
 
@@ -131,7 +121,6 @@ input {
     height: 3rem;
     width: 100%;
     font-size: 1rem;
-    max-width: 500px;
     padding: 1rem;
     border-radius: .5rem;
     background-color: transparent;
