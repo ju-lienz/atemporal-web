@@ -18,13 +18,11 @@
 import ShoppingCartIcon from '@/assets/icons/ShoppingCartIcon.vue'
 import Product from '@/components/cart/Product.vue';
 
-
 const products = [
     {
-        
+
     }
 ]
-
 
 </script>
 <style scoped></style>

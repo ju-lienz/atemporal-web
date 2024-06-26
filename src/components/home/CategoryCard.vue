@@ -3,7 +3,6 @@
         :class="`relative max-w-full flex items-center group cursor-pointer justify-center flex-col gap-4 ${props.twoRows ? 'max-h-[24rem] min-h-[24rem]' : 'max-h-48 min-h-48'}`">
         <img :class="` w-full absolute brightness-50 object-cover transition duration-500 group-hover:scale-105`"
             :src="imageSrc" alt="Product image">
-        <!-- <div class="absolute h-full inset-0 bg-black opacity-40"></div> -->
         <h2 class="text-white text-3xl font-light">{{ text }}</h2>
         <button class="group-hover:bg-white group-hover:text-primary">Ver más
             <ArrowRightIcon :stroke="stroke" />
@@ -45,7 +44,6 @@ button {
     align-items: center;
     justify-content: center;
     gap: .5rem;
-    /* background-color: #fff; */
     padding: .5rem 1rem;
     color: #ffffff;
     border: 1px solid #ffffff;

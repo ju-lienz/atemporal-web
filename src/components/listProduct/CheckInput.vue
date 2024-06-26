@@ -17,7 +17,6 @@
             </div>
             <label :for="elm" class="cursor-pointer">{{ elm }}</label>
         </div>
-
     </li>
 </template>
 <script setup>

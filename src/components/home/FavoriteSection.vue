@@ -19,7 +19,6 @@
 import StarIcon from '@/assets/icons/StarIcon.vue';
 import FavoriteCard from './FavoriteCard.vue';
 
-
 </script>
 <style scoped>
 section {
@@ -30,7 +29,6 @@ section {
     display: flex;
     justify-content: space-between;
 }
-
 
 .container>div:nth-child(1) {
     display: flex;

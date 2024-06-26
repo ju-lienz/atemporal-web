@@ -15,11 +15,8 @@
                 fontSize: '3.5rem',
                 width: '100%'
             }">Expresa tu personalidad con</h2>
-
             <StarIcon color="#fbfbfb" />
             <h3 class="atemporal">Atemporal</h3>
-
-
             <StarIcon color="#fbfbfb" />
             <p>Queremos acercarte una exclusiva línea de accesorios seleccionados para ser tu complemento ideal en el
                 día a día o en ocasiones especiales. Nuestra misión es que cada accesorios que elijas sea el reflejo de
@@ -35,17 +32,8 @@
 import ArrowDownIcon from '@/assets/icons/ArrowDownIcon.vue';
 import StarIcon from '@/assets/icons/StarIcon.vue';
 
-
 </script>
 <style scoped>
-/* .container-text {
-    z-index: 100;
-    display: flex;
-    min-height: 100vh;
-    align-items: center;
-    padding-left: 13.5rem;
-} */
-
 .text-principal {
     display: flex;
     flex-direction: column;

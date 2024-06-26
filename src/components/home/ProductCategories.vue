@@ -49,7 +49,6 @@ const cardAccesorios = {
     align-items: center;
     justify-content: center;
     gap: .5rem;
-    /* background-color: #fff; */
     padding: .5rem 1rem;
     color: #593122;
     border: 1px solid #593122;

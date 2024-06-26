@@ -11,7 +11,6 @@
 
 </script>
 <style scoped>
-
 .card-container {
     max-width: 33%;
     display: flex;
@@ -19,8 +18,6 @@
     gap: 1rem;
     border-left: 1px solid #55555546;
 }
-
-
 
 h3 {
     font-family: 'Arsenica Trial';
@@ -41,5 +38,4 @@ img {
     width: 30%;
     object-fit: cover;
 }
-
 </style>

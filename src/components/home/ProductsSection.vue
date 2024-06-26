@@ -2,15 +2,13 @@
     <div class="container">
         <div class="title">
             <h2 class="name-section">Nuestros productos</h2>
-            <router-link
-            class="button"
-            :to="{name: 'productList'}"
-            @mouseenter="handleHover"
-            @mouseleave="handleHover"
-            >Ver todos los productos<ArrowRightIcon :stroke="stroke"/></router-link>
+            <router-link class="button" :to="{ name: 'productList' }" @mouseenter="handleHover"
+                @mouseleave="handleHover">Ver todos los productos
+                <ArrowRightIcon :stroke="stroke" />
+            </router-link>
         </div>
         <div class="card-container">
-            <ProductCard  v-for="(product, index) in products" :key="index" :product="product" :zoom="true"/>
+            <ProductCard v-for="(product, index) in products" :key="index" :product="product" :zoom="true" />
         </div>
     </div>
 </template>
@@ -24,9 +22,9 @@ const handleHover = () => {
     stroke.value = stroke.value == "#fff" ? "#593122" : "#fff";
 }
 
-const products =  ref([])
+const products = ref([])
 
-onMounted(async() => {
+onMounted(async () => {
     const response = await ClienteAxios.get('/Productos/')
     if (response.status == 200) {
         products.value = response.data
@@ -38,7 +36,6 @@ onMounted(async() => {
 .name-section {
     margin: 1rem 0;
 }
-
 
 .title {
     /* display: flex; */
@@ -54,10 +51,9 @@ onMounted(async() => {
     cursor: pointer;
 }
 
-.container{
+.container {
     padding: 2rem 0;
 }
-
 
 .button {
     position: absolute;
@@ -67,7 +63,6 @@ onMounted(async() => {
     align-items: center;
     justify-content: center;
     gap: .5rem;
-    /* background-color: #fff; */
     padding: .5rem 1rem;
     color: #593122;
     border: 1px solid #593122;
@@ -81,6 +76,4 @@ onMounted(async() => {
     background-color: #593122;
     color: white;
 }
-
-
 </style>

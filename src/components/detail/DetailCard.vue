@@ -22,7 +22,6 @@
             </a>
         </div>
     </div>
-
 </template>
 
 <script setup>

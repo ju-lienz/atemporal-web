@@ -74,8 +74,6 @@ ul:nth-child(3) {
 }
 
 ul>li {
-    /* font-size: .9rem;
-    font-weight: 100; */
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -86,7 +84,6 @@ ul>li {
 }
 
 ul>li:first-child {
-    /* font-weight: 400; */
     margin-bottom: 1rem;
 }
 

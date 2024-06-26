@@ -46,15 +46,10 @@
         </form>
     </div>
 </template>
-
 <script setup>
 import { ref } from 'vue';
 import InputPassword from '@/components/login/InputPassword.vue'
-
-
 const password = ref('')
 const repeatPassword = ref('')
-
 </script>
-
 <style scoped></style>

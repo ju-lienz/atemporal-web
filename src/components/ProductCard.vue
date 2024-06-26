@@ -32,64 +32,10 @@ const props = defineProps({
         type: Boolean,
         default: false
     }
-
 })
 </script>
 <style scoped>
 .card {
     width: calc((100% / 4) - .75rem);
-    /* background-color: #764838; */
-
 }
-
-/* 
-    max-width: 25%;
-    background-color: #FBFBFB;
-    padding: .5rem;
-    border: 1px solid #BDB3B180;
-    border-radius: .5rem;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    gap: .5rem;
-    align-items: center;
-    transform: scale(1);
-    color: #2d2d2d;
-    transition: all .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-
-.card:hover {
-    transform: scale(1.01);
-    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-}
-
-button {
-    width: 100%;
-    padding: 0.5rem;
-    background-color: #6e3c2a;
-    color: #FBFBFB;
-    border: none;
-    border-radius: 0.3rem;
-    display: flex;
-    justify-content: center;
-    gap: .5rem;
-    cursor: pointer;
-}
-
-h4 {
-    font-size: 1.4rem;
-}
-
-h5 {
-    font-size: 1.4rem;
-    font-weight: 500;
-}
-
-p {
-    font-size: 1rem;
-    font-weight: 200;
-}
-
-button:hover {
-    background-color: #552e21;
-} */
 </style>
