@@ -1,5 +1,5 @@
 <template>
-    <img src="@/assets/images/imagen3.jpg" class="w-full h-dvh brightness-50 absolute object-cover top-0 z-0">
+    <img src="@/assets/images/imagen3.jpg" class="w-full h-screen brightness-50 absolute object-cover top-0 z-0">
     <div class="container ">
         <div class="text-principal">
             <h2 class="arsenica text-2xl lg:text-5xl w-full text-center" :style="{

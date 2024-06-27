@@ -35,7 +35,7 @@
 
 
     <!-- HEADER MOBILE -->
-    <header class="1lg:hidden !fixed top-0 left-0 justify-between items-center px-4 py-1 overflow-hidden transition-all">
+    <header class="lg:hidden !fixed top-0 left-0 justify-between items-center px-4 py-1 overflow-hidden transition-all">
         <div class="flex justify-between w-full items-center">
             <MenuIcon color="white" class="cursor-pointer w-1/12" @click="menu = !menu" />
             <RouterLink :to="{ name: 'home' }">

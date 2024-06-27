@@ -1,5 +1,6 @@
 <template>
-    <div class="container flex flex-col lg:flex-row !px-4 !py-16 md:!py-32">
+    <div class="container flex flex-col flex-wrap lg:flex-row !px-4 !py-16 md:!py-32">
+        <h3 v-if="route.params.name" class="w-full pl-64 text-2xl capitalize py-2">{{ route.params.name }}</h3>
         <div class="filters w-1/5 hidden lg:block">
             <div class="filter-title">
                 <FilterIcon :width="20" />Filtros
@@ -24,11 +25,14 @@
             <div class="w-full flex gap-2 font-semibold">
                 <FilterIcon :width="20" class="lg:hidden" />Filtros
             </div>
-            <FilterList :lista="types" title="Tipo" :listOpen="listStore.type"  class="w-1/3 border p-2 bg-white"/>
-            <FilterList :lista="materials" title="Material"  :listOpen="listStore.gender" class="w-1/3 border p-2 bg-white" />
-            <FilterList :lista="genders" title="Género"  :listOpen="listStore.materials" class="w-1/3 border p-2 bg-white" />
+            <FilterList :lista="types" title="Tipo" :listOpen="listStore.type" class="w-1/3 border p-2 bg-white" />
+            <FilterList :lista="materials" title="Material" :listOpen="listStore.gender"
+                class="w-1/3 border p-2 bg-white" />
+            <FilterList :lista="genders" title="Género" :listOpen="listStore.materials"
+                class="w-1/3 border p-2 bg-white" />
         </div>
         <div class="product-container w-full lg:w-4/5">
+            <p v-if="products.length == 0">No hay productos</p>
             <ProductCard v-for="(product, index) in products" :key="index" :product="product" />
         </div>
     </div>
@@ -41,16 +45,27 @@ import CheckInput from '@/components/listProduct/CheckInput.vue';
 import { ClienteAxios } from '@/config/ClienteAxios';
 import FilterList from '@/components/listProduct/FilterList.vue';
 import { useListStore } from '@/stores/listStore';
+import { useRoute } from 'vue-router';
 
 const listStore = useListStore()
 
 const products = ref([])
+const route = useRoute()
 
 onMounted(async () => {
+    if (route.params?.name) {
+        const response = await ClienteAxios.get(`/Categorias/${route.params?.name}`)
+        if (response.status == 200) {
+            products.value = response.data
+        }
+        return
+    }
+
     const response = await ClienteAxios.get('/Productos/')
     if (response.status == 200) {
         products.value = response.data
     }
+    return 
 })
 
 

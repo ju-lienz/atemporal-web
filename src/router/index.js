@@ -36,6 +36,11 @@ const routes = [
         path: '/cart',
         name: 'cart',
         component: CartView
+    },
+    {
+        path: '/category/:name',
+        name: 'category',
+        component: ProductListView
     }
 ]
 

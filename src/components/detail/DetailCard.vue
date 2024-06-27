@@ -1,9 +1,9 @@
 <template>
-    <div class="container !py-20 flex-wrap">
-        <div class="image-container w-full md:w-1/2">
-            <img src="@/assets/images/imageProduct.png" alt="" class="primary-image">
-            <img src="@/assets/images/imageProduct.png" alt="" class="secondary-image">
-            <img src="@/assets/images/imageProduct.png" alt="" class="tertiary-image">
+    <div class="container !py-28 flex-wrap min-h-screen">
+        <div class="image-container w-full  md:w-1/2">
+            <img :src="`http://localhost:8000/storage/${product.producto_imagen}`" alt="" class="primary-image aspect-square overflow-hidden object-cover rounded-md">
+            <!-- <img src="@/assets/images/imageProduct.png" alt="" class="secondary-image">
+            <img src="@/assets/images/imageProduct.png" alt="" class="tertiary-image"> -->
         </div>
         <div class="text-container pt-4 md:pl-10 w-full md:w-1/2 md:max-w-lg">
             <h1 class="arsenica text-2xl">{{ product.producto_nombre }}</h1>
@@ -39,7 +39,6 @@ onBeforeMount(async () => {
 
     const id = route.params.id;
     const response = await ClienteAxios.get(`/Productos/${id}`);
-    console.log(response);
     if (response.status == 200) {
         product.value = response.data
     }
