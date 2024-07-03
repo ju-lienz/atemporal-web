@@ -1,5 +1,5 @@
 <template>
-    <div class="border rounded-md text-gray-600 border-gray-400/60 p-2 gap-4 flex w-full mb-4">
+    <div class="border rounded-md text-gray-600 border-gray-400/60 p-2 gap-4 flex w-full mb-4 bg-stone-100">
         <img src="@/assets/images/imageProduct.png" alt="" class="w-[10%] aspect-[14/16] object-cover rounded-md">
         <div class="w-5/12 ">
             <h4 class=" font-semibold">{{ product.producto_nombre }}</h4>
