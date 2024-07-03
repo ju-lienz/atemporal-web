@@ -5,11 +5,8 @@
             <h2 class="arsenica text-2xl lg:text-5xl w-full text-center" :style="{
                 color: '#F2D49B'
             }">Expresa tu personalidad con</h2>
-
             <StarIcon color="#fbfbfb" />
             <h3 class="atemporal !text-5xl lg:text-8xl">Atemporal</h3>
-
-
             <StarIcon color="#fbfbfb" />
             <p class="px-4 text-center lg:px-0 lg:text-left">Queremos acercarte una exclusiva línea de accesorios seleccionados para ser tu
                 complemento ideal en el
@@ -26,17 +23,8 @@
 import ArrowDownIcon from '@/assets/icons/ArrowDownIcon.vue';
 import StarIcon from '@/assets/icons/StarIcon.vue';
 
-
 </script>
 <style scoped>
-/* .container-text {
-    z-index: 100;
-    display: flex;
-    min-height: 100vh;
-    align-items: center;
-    padding-left: 13.5rem;
-} */
-
 .text-principal {
     display: flex;
     flex-direction: column;

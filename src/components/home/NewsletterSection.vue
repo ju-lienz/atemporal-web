@@ -72,10 +72,6 @@ input::placeholder {
     color: #9D8277;
 }
 
-/* input::selection {
-    border: 2px solid #593122;
-} */
-
 .form-group {
     display: flex;
     gap: .5rem;

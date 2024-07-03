@@ -10,7 +10,6 @@
     font-style: normal;
 }
 
-
 @font-face {
     font-family: 'Arsenica Trial';
     src: url('@/assets/fonts/Arsenica/ArsenicaTrial-Thin.ttf') format('truetype');
@@ -118,7 +117,6 @@
 :root {
     font-size: 16px;
     color: black;
-    /* letter-spacing: .03rem; */
 }
 
 * {
@@ -159,8 +157,6 @@ body {
     color: #593122;
     font-size: 2.5rem;
     font-weight: 500;
-    /* font-size: clamp(20px, 4rem, 24px) */
-    /* display: flex; */
 }
 
 h1 {

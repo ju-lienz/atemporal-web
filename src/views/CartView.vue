@@ -27,10 +27,5 @@ import { useCartStore } from '@/stores/cartStore';
 
 const store = useCartStore();
 
-const products = [
-    {
-    }
-]
-
 </script>
 <style scoped></style>

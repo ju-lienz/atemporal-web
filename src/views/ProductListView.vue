@@ -68,7 +68,6 @@ onMounted(async () => {
     return 
 })
 
-
 const typeRaw = ref(["pulsera", "cadenas", "aros", "reloj"])
 const types = computed(() => {
     return typeRaw.value.map((type) => doUppercase(type))

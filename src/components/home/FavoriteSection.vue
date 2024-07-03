@@ -17,13 +17,11 @@
 import StarIcon from '@/assets/icons/StarIcon.vue';
 import FavoriteCard from './FavoriteCard.vue';
 
-
 </script>
 <style scoped>
 section {
     background-color: #D9D1CC;
 }
-
 
 
 

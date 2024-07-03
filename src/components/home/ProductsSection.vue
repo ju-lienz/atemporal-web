@@ -41,7 +41,6 @@ onMounted(async () => {
     margin: 1rem 0;
 }
 
-
 .title {
     /* display: flex; */
     justify-content: space-between;
@@ -55,9 +54,6 @@ onMounted(async () => {
     cursor: pointer;
 }
 
-
-
-
 .button {
     position: absolute;
     top: 10%;
@@ -66,7 +62,6 @@ onMounted(async () => {
     align-items: center;
     justify-content: center;
     gap: .5rem;
-    /* background-color: #fff; */
     padding: .5rem 1rem;
     color: #593122;
     border: 1px solid #593122;

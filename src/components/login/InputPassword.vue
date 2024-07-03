@@ -22,19 +22,14 @@
     </div>
 </template>
 <script setup>
-import {ref} from 'vue'
+import { ref } from 'vue'
 const emits = defineEmits(['changePassword'])
-
-
 const newPass = ref('')
-
 const showPass = ref(false)
 const togglePass = () => showPass.value = !showPass.value
-
 
 const changePass = () => {
     emits('changePassword', newPass)
 }
-
 </script>
 <style scoped></style>

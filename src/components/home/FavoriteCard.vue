@@ -11,14 +11,11 @@
 
 </script>
 <style scoped>
-
 .card-container {
     display: flex;
     padding: 1rem;
     gap: 1rem;
 }
-
-
 
 h3 {
     font-family: 'Arsenica Trial';
@@ -39,5 +36,4 @@ img {
     width: 30%;
     object-fit: cover;
 }
-
 </style>
