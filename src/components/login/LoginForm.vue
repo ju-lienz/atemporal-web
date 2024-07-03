@@ -6,7 +6,6 @@
                 <p class="font-bold m-2 text-sm">Error</p>
                 <p class="m-2 text-sm">El mail o contraseña son incorrectos</p>
             </div>
-
             <div class="mb-4">
                 <label class="block text-gray-700 text-sm font-medium mb-2" for="username">
                     E-mail:
@@ -14,13 +13,10 @@
                 <input :class="{ '!border-red-500': error }"
                     class="border-0 p-3 outline-zinc-400 block w-full text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 rounded-md"
                     required id="username" type="text" placeholder="Ingrese su e-mail" v-model="email">
-
             </div>
             <div class="mb-4">
                 <label class="block text-gray-700 text-sm font-medium mb-2">Contraseña:</label>
-
                 <InputPassword @changePassword="(pass) => password = pass" />
-
                 <div class="flex justify-between py-2">
                     <div class="inline-flex items-center gap-2 ">
                         <div class="relative flex cursor-pointer items-center rounded-full" data-ripple-dark="true">
@@ -58,7 +54,6 @@
         </form>
     </div>
 </template>
-
 <script setup>
 import { ref } from 'vue';
 import InputPassword from '@/components/login/InputPassword.vue'
@@ -68,10 +63,6 @@ import InputPassword from '@/components/login/InputPassword.vue'
 const email = ref('');
 const password = ref('');
 const error = ref(false);
-
-
-
-
 
 // Método que se ejecuta cuando se envía el formulario
 const sendForm = () => {
@@ -105,81 +96,4 @@ const validateEmail = (email) => {
     return re.test(email);
 };
 </script>
-
-<style scoped>
-/* a {
-    color: #6e3c2a;
-}
-
-h1 {
-    font-weight: 600;
-}
-
-.input-text {
-    font-size: 1.1rem;
-    margin-bottom: 0.5rem;
-}
-
-.forgot-password {
-    font-size: 1rem;
-    color: #7A7A7A;
-    text-decoration: underline;
-    margin-bottom: 1rem;
-}
-
-button {
-    width: 100%;
-    padding: 0.5rem;
-    background-color: #6e3c2a;
-    color: #FBFBFB;
-    border: none;
-    border-radius: 0.3rem;
-    display: flex;
-    justify-content: center;
-    gap: .5rem;
-    cursor: pointer;
-}
-
-input {
-    width: 100%;
-    font-size: 1rem;
-    padding: 1rem;
-    border-radius: .5rem;
-    background-color: transparent;
-    border: 1px solid #593122;
-    margin: 0;
-    outline: none;
-    color: #593122;
-    margin-bottom: 0.3rem;
-}
-
-p {
-    font-size: 1.1rem;
-    color: #7A7A7A;
- */
-
-/* .container {
-    width: 100%;
-    border-radius: 15px;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-} */
-
-/* .form {
-    background-color: #FBFBFB;
-    border: 1px solid #E8E8E8;
-    border-radius: 15px;
-    max-width: 45rem;
-    width: 100%;
-    padding: 2.5rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
-
-body {
-    min-height: 100vh !important;
-} */
-</style>
+<style scoped></style>

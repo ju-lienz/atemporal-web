@@ -114,7 +114,6 @@ header {
     border-bottom: 1px solid #fbfbfb93;
     transition: all .5s cubic-bezier(0.165, 0.84, 0.44, 1);
     user-select: none;
-
 }
 
 header:hover {
