@@ -1,6 +1,6 @@
 <template>
     <footer>
-        <div class="container">
+        <div class="container px-4">
             <h1 class="atemporal">Atemporal</h1>
             <ul class="list-none">
                 <RouterLink :to="{ name: 'productList' }">

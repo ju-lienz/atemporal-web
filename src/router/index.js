@@ -13,14 +13,14 @@ const routes = [
         component: HelloWorld
     },
     {
-        path: '/products/:id',
-        name: 'detail',
-        component: ProductDetailView
-    },
-    {
         path: '/products',
         name: 'productList',
         component: ProductListView
+    },
+    {
+        path: '/products/:id',
+        name: 'detail',
+        component: ProductDetailView
     },
     {
         path: '/login',
@@ -36,6 +36,11 @@ const routes = [
         path: '/cart',
         name: 'cart',
         component: CartView
+    },
+    {
+        path: '/category/:name',
+        name: 'category',
+        component: ProductListView
     }
 ]
 

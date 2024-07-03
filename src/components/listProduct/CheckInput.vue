@@ -26,5 +26,6 @@ const props = defineProps({
         default: 'Texto de prueba'
     }
 })
+
 </script>
 <style scoped></style>

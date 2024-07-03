@@ -1,17 +1,17 @@
 <template>
     <div class="grid grid-cols-4 grid-rows-4 gap-0">
-        <div class="col-span-2 row-span-4 overflow-hidden">
+        <router-link :to="{name: 'category', params: {name: cardMarroquineria.text}}" class="col-span-4 row-span-1 md:col-span-2 md:row-span-4 overflow-hidden">
             <CategoryCard :text="cardMarroquineria.text" :two-rows="true" :image="cardMarroquineria.image" />
-        </div>
-        <div class="col-span-2 row-span-2 col-start-3 overflow-hidden">
+        </router-link>
+        <router-link :to="{name: 'category', params: {name: cardRelojes.text}}" class="col-span-4 row-span-1 md:col-span-2 md:row-span-2 md:col-start-3 overflow-hidden">
             <CategoryCard :text="cardRelojes.text" :image="cardRelojes.image" />
-        </div>
-        <div class="row-span-2 col-start-3 row-start-3  overflow-hidden">
+        </router-link>
+        <router-link :to="{name: 'category', params: {name: cardJoyas.text}}" class="col-span-4 row-span-1 md:col-span-1 md:row-span-2 md:col-start-3 md:row-start-3  overflow-hidden">
             <CategoryCard :text="cardJoyas.text" :image="cardJoyas.image" />
-        </div>
-        <div class="row-span-2 col-start-4 row-start-3  overflow-hidden">
+        </router-link>
+        <router-link :to="{name: 'category', params: {name: cardAccesorios.text}}" class="col-span-4 row-span-1 md:row-span-2 md:col-start-4 md:row-start-3  overflow-hidden">
             <CategoryCard :text="cardAccesorios.text" :image="cardAccesorios.image" />
-        </div>
+        </router-link>
     </div>
 </template>
 
