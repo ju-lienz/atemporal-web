@@ -20,7 +20,9 @@
                 <h2 class="text-lg py-3 inline font-semibold">Total:</h2>
                 <h2 class="text-xl py-3 inline">$3.500</h2>
             </div>
-            <button class="bg-primary py-2 text text-white rounded-md w-full">Finalizar compra</button>
+            <button class="bg-primary py-2 text text-white rounded-md w-full mb-3">Finalizar compra</button>
+            <button class="bg-transparent py-2 text text-primary rounded-md w-full border-primary border-2">Seguir
+                comprando</button>
         </div>
     </div>
 </template>
