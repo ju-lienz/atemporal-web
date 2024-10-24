@@ -4,57 +4,8 @@
             <h2 class="flex gap-2 mb-5">
                 <ShoppingCartIcon color="#3d3d3d" width=24 />Mi carrito
             </h2>
-            <div class="flex items-center justify-between border-b border-gray-300 py-4">
-                <img src="https://via.placeholder.com/150" alt="product image"
-                    class="w-24 h-24 object-cover rounded-md">
-                <div class="flex-1 px-4">
-                    <h3 class="text-lg font-semibold">Reloj Atemporal</h3>
-                    <p class="text-sm text-gray-500">Reloj de diseño clásico y elegante.</p>
-                    <button class="text-red-500 text-sm mt-2 underline">Eliminar</button>
-                </div>
-                <div class="flex items-center gap-2">
-                    <button
-                        class="bg-gray-200 text-gray-700 rounded-full w-8 h-8 flex items-center justify-center">-</button>
-                    <span class="text-lg font-semibold">1</span>
-                    <button
-                        class="bg-gray-200 text-gray-700 rounded-full w-8 h-8 flex items-center justify-center">+</button>
-                </div>
-                <p class="text-lg font-semibold">$2.500</p>
-            </div>
-            <div class="flex items-center justify-between border-b border-gray-300 py-4">
-                <img src="https://via.placeholder.com/150" alt="product image"
-                    class="w-24 h-24 object-cover rounded-md">
-                <div class="flex-1 px-4">
-                    <h3 class="text-lg font-semibold">Pulsera de cuero</h3>
-                    <p class="text-sm text-gray-500">Pulsera de cuero genuino, ideal para toda ocasión.</p>
-                    <button class="text-red-500 text-sm mt-2 underline">Eliminar</button>
-                </div>
-                <div class="flex items-center gap-2">
-                    <button
-                        class="bg-gray-200 text-gray-700 rounded-full w-8 h-8 flex items-center justify-center">-</button>
-                    <span class="text-lg font-semibold">2</span>
-                    <button
-                        class="bg-gray-200 text-gray-700 rounded-full w-8 h-8 flex items-center justify-center">+</button>
-                </div>
-                <p class="text-lg font-semibold">$1.500</p>
-            </div>
-            <div class="flex items-center justify-between border-b border-gray-300 py-4">
-                <img src="https://via.placeholder.com/150" alt="product image"
-                    class="w-24 h-24 object-cover rounded-md">
-                <div class="flex-1 px-4">
-                    <h3 class="text-lg font-semibold">Gafas de sol</h3>
-                    <p class="text-sm text-gray-500">Gafas de sol con protección UV.</p>
-                    <button class="text-red-500 text-sm mt-2 underline">Eliminar</button>
-                </div>
-                <div class="flex items-center gap-2">
-                    <button
-                        class="bg-gray-200 text-gray-700 rounded-full w-8 h-8 flex items-center justify-center">-</button>
-                    <span class="text-lg font-semibold">1</span>
-                    <button
-                        class="bg-gray-200 text-gray-700 rounded-full w-8 h-8 flex items-center justify-center">+</button>
-                </div>
-                <p class="text-lg font-semibold">$3.000</p>
-            </div>
+            <Product v-for="product in products" :key="product.id" :product="product" />
+
         </div>
         <div class="max-w-lg w-4/12 border-gray-400/60 border m-1 p-4 rounded-md mt-[calc(3.8rem)] bg-stone-100 mb-54">
             <h2 class="text-xl pb-2 font-semibold">Resumen de mi orden</h2>
@@ -78,6 +29,10 @@
 
 <script setup>
 import ShoppingCartIcon from '@/assets/icons/ShoppingCartIcon.vue'
+import { useCartStore } from '@/stores/cartStore';
+import Product from '@/components/cart/Product.vue';
+const store = useCartStore()
+const products = store.cart
 </script>
 
 <style scoped></style>

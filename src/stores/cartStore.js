@@ -3,16 +3,31 @@ import { computed, ref } from "vue"
 
 export const useCartStore = defineStore('cart', () => {
     const count = ref(20)
-    const listProduct = ref([])
-    const doubleCount = computed(() => count.value * 2)
-    function addProduct(product) {
-      count.value++
-      console.log("asdasdas")
-      console.log("Se ha añadido el producto", product)
-      listProduct.value.push(product)
-      console.log(listProduct.value)
+    const cart = ref(JSON.parse(localStorage.getItem('cart')) ?? [])
+    function loadCart(){
+      cart.value = JSON.parse(localStorage.getItem('cart')) ?? [];
     }
+
+    const doubleCount = computed(() => count.value * 2)
+    function addProduct(productToAdd) {
+      const indexProductInCart = cart.value.findIndex(product => productToAdd.id == product.id)
+      if (indexProductInCart != -1) {
+        cart.value[indexProductInCart].cantidad++
+      } else {
+        cart.value.push({...productToAdd, cantidad: 1})
+      }
+      localStorage.setItem('cart', JSON.stringify(cart.value))
+    }
+
+    function substractProduct(productToSubstract) {
+      const indexProductInCart = cart.value.findIndex(product => productToAdd.id == product.id)
+      if (indexProductInCart != -1) {
+        cart.value[indexProductInCart].cantidad--
+      }
+      localStorage.setItem('cart', JSON.stringify(cart.value))
+    }
+
   
-    return { count, doubleCount, addProduct, listProduct}
+    return { count, doubleCount, addProduct, loadCart, cart}
   })
   
