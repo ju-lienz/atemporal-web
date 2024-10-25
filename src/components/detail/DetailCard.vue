@@ -1,7 +1,7 @@
 <template>
     <div class="container !py-28 flex-wrap min-h-screen">
         <div class="image-container w-full  md:w-1/2">
-            <img :src="`http://localhost:8000/storage/${product.producto_imagen}`" alt=""
+            <img :src="`http://127.0.0.1:8000/storage/${product.producto_imagen}`" alt=""
                 class="primary-image aspect-square overflow-hidden object-cover rounded-md">
             <!-- <img src="@/assets/images/imageProduct.png" alt="" class="secondary-image">
             <img src="@/assets/images/imageProduct.png" alt="" class="tertiary-image"> -->
