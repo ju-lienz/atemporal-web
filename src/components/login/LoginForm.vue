@@ -1,3 +1,4 @@
+@ -0,0 +1,99 @@
 <template>
     <div class="container  mx-auto w-full min-h-screen flex items-center justify-center">
         <form class="bg-white  shadow-md rounded-xl px-8 pt-6 pb-8 mb-4 w-full max-w-xl" @submit.prevent="sendForm">

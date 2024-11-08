@@ -1,3 +1,4 @@
+@ -0,0 +1,78 @@
 <template>
     <div class="container px-4">
         <div class="title">
@@ -30,6 +31,7 @@ const products = ref([])
 
 onMounted(async () => {
     const response = await ClienteAxios.get('/Productos/')
+    console.log(response)
     if (response.status == 200) {
         products.value = response.data
     }

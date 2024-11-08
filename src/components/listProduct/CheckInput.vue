@@ -1,3 +1,4 @@
+@ -0,0 +1,31 @@
 <template>
     <li>
         <div class="inline-flex items-center gap-2">
