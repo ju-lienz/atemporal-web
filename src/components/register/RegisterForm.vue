@@ -1,7 +1,7 @@
 @ -0,0 +1,76 @@
 <template>
     <div class="container !mt-16 lg:!mt-0 mx-auto w-full min-h-[calc(100vh-6rem)] pt-20 flex items-center justify-center">
-        <form @submit.prevent="register" class="bg-white shadow-md rounded-xl px-8 pt-6 pb-8 mb-4 w-full max-w-xl">
+        <form @submit.prevent="sendForm" class="bg-white shadow-md rounded-xl px-8 pt-6 pb-8 mb-4 w-full max-w-xl">
             <h1 class="font-bold text-2xl text-stone-800">Crear cuenta</h1>
             <p class="text-gray-500 pb-6">Compra más rápido y lleva el control de tus pedidos de la manera más cómoda.</p>
             <div class="mb-4">
@@ -52,6 +52,7 @@ import { ref } from 'vue';
 import InputPassword from '@/components/login/InputPassword.vue';
 import client from '@/config/client';
 import axios from 'axios';
+import { useAuthStore } from '@/stores/authStore';
 
 const cliente_nombre = ref('');
 const cliente_direccion = ref('');
@@ -60,33 +61,25 @@ const cliente_email = ref('');
 const cliente_telefono = ref('');
 const cliente_password = ref('');
 
+const authStore = useAuthStore()
 
-
-const register = async () => {
-    console.log(cliente_password.value)
+const sendForm = async () => {
     try {
-        const formdata = new FormData()
-        formdata.append('cliente_nombre', cliente_nombre.value)
-        formdata.append('cliente_direccion', cliente_direccion.value)
-        formdata.append('cliente_localidad', cliente_localidad.value)
-        formdata.append('cliente_email', cliente_email.value)
-        formdata.append('cliente_telefono', cliente_telefono.value)
-        formdata.append('cliente_password', cliente_password.value)
-        const rest = await ClienteAxios.post('Clientes/Crear', //{
-            //cliente_nombre: cliente_nombre.value,
-            //cliente_direccion: cliente_direccion.value,
-           // cliente_localidad: cliente_localidad.value,
-           // cliente_email: cliente_email.value,
-           // cliente_telefono: cliente_telefono.value,
-            //cliente_contraseña: cliente_contraseña.value,
-           
-        //}
-        formdata);
-        console.log(rest.data)
-        if(rest.data.status === 'OK'){
-            
-            // window.location.href = '/login';
-        } 
+        const formdata = ref({
+            cliente_nombre: cliente_nombre.value,
+            cliente_direccion: cliente_direccion.value,
+            cliente_localidad: cliente_localidad.value,
+            cliente_email: cliente_email.value,
+            cliente_telefono: cliente_telefono.value,
+            cliente_password: cliente_password.value,
+        })
+        // formdata.append('cliente_nombre', cliente_nombre.value)
+        // formdata.append('cliente_direccion', cliente_direccion.value)
+        // formdata.append('cliente_localidad', cliente_localidad.value)
+        // formdata.append('cliente_email', cliente_email.value)
+        // formdata.append('cliente_telefono', cliente_telefono.value)
+        // formdata.append('cliente_password', cliente_password.value)
+        await authStore.register(formdata.value);
        
     } catch (error) {
         console.log(error)
