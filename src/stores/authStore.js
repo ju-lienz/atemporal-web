@@ -4,15 +4,15 @@ import { defineStore } from "pinia";
 import { computed, ref } from "vue";
 
 export const useAuthStore = defineStore("auth", () => {
-  const user = ref(obtenerUsuario());
+  const user = ref(null);
   const token = ref(recuperarToken());
 
   async function obtenerUsuario() {
     try {
       const response = await ClienteAxios.get("Clientes/Datos");
-      return response.data.cliente 
+      user.value = response.data.cliente 
     } catch (e) {
-      return  null
+      user.value =  null
     }
   }
 
@@ -20,9 +20,11 @@ export const useAuthStore = defineStore("auth", () => {
     const res = await ClienteAxios.post('Clientes/Crear', formData);
     console.log(res)
     if(res.data.status === 'OK'){  
-      user.value = await obtenerUsuario();
+      await obtenerUsuario();
     } 
   }
+
+  obtenerUsuario();
 
   return { user, token, obtenerUsuario, register };
 });
