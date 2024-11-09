@@ -12,7 +12,8 @@
                 <li>Accesorios</li>
             </ul>
             <ul>
-                <router-link v-if="" :to="{ name: 'login' }">Iniciar sesión</router-link>
+                <router-link v-if="authStore.user != null" :to="{ name: 'login' }">Cerrar sesión</router-link>
+                <router-link v-else :to="{ name: 'login' }">Iniciar sesión</router-link>
                 <RouterLink :to="{ name: 'cart' }">
                     <span
                         class="absolute -top-2 -right-2 rounded-full bg-red-600 flex items-center justify-center aspect-square w-5 text-center"
@@ -99,7 +100,6 @@ const authStore = useAuthStore();
 const menu = ref(false)
 const search = ref(false)
 const store = useCartStore()
-
 </script>
 <style scoped>
 header {
