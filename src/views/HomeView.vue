@@ -9,7 +9,8 @@ import ProductCategories from '@/components/home/ProductCategories.vue';
 <template>
   <PrincipalImage />
   <FavoriteSection />
-   
+
+
   <ProductCategories />
   <ProductsSection />
   <NewsletterSection />

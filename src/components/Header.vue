@@ -12,15 +12,16 @@
                 <li>Accesorios</li>
             </ul>
             <ul>
-                <router-link :to="{ name: 'login' }">Iniciar sesión</router-link>
+                <router-link v-if="" :to="{ name: 'login' }">Iniciar sesión</router-link>
                 <RouterLink :to="{ name: 'cart' }">
-                    <span class="absolute -top-2 -right-2 rounded-full bg-red-600 flex items-center justify-center aspect-square w-5 text-center" style="font-size: .7rem; line-height: .7rem;">{{ store.quantityOfProducts }}</span>
+                    <span
+                        class="absolute -top-2 -right-2 rounded-full bg-red-600 flex items-center justify-center aspect-square w-5 text-center"
+                        style="font-size: .7rem; line-height: .7rem;">{{ store.quantityOfProducts }}</span>
                     <CartIconVue />
                 </RouterLink>
             </ul>
         </div>
     </header>
-
 
     <!-- HEADER MOBILE -->
     <header class="lg:hidden !fixed top-0 left-0 justify-between items-center px-4 py-1 overflow-hidden transition-all">
@@ -35,9 +36,10 @@
             'scale-y-0 max-h-0 p-0': !search,
             'scale-y-100 max-h-full py-1': search,
 
-        }" >
+        }">
             <input type="text" class="w-full p-2 pr-10 rounded-md text-primary">
-            <CloseIcon color="fill-primary" :size="14" class="absolute top-1/2 right-3 -translate-y-1/2 " @click="search = false"/>
+            <CloseIcon color="fill-primary" :size="14" class="absolute top-1/2 right-3 -translate-y-1/2 "
+                @click="search = false" />
         </div>
 
     </header>
@@ -90,10 +92,14 @@ import CartIconVue from '@/assets/icons/CartIcon.vue'
 
 import { ref } from 'vue';
 import { useCartStore } from '@/stores/cartStore'
+import { useAuthStore } from '@/stores/authStore'
+
+const authStore = useAuthStore();
 
 const menu = ref(false)
 const search = ref(false)
 const store = useCartStore()
+
 </script>
 <style scoped>
 header {
