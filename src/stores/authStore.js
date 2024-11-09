@@ -7,7 +7,7 @@ export const useAuthStore = defineStore("auth", () => {
   const user = ref(obtenerUsuario());
   const token = ref(recuperarToken());
 
-  async function get_user() {
+  async function obtenerUsuario() {
     try {
       const response = await ClienteAxios.get("Clientes/Datos");
       user.value = response.data.cliente 
@@ -19,7 +19,7 @@ export const useAuthStore = defineStore("auth", () => {
   async function register(formData) {
     const res = await ClienteAxios.post('Clientes/Crear', formData);
     if(res.data.status === 'OK'){  
-      obtenerUsuario();
+      await obtenerUsuario();
     } 
   }
 
