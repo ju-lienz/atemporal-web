@@ -12,7 +12,7 @@
                 <li>Accesorios</li>
             </ul>
             <ul>
-                <router-link v-if="authStore.user != null" :to="{ name: 'login' }">Cerrar sesión</router-link>
+                <a v-if="authStore.user != null" @click="authStore.logout">Cerrar sesión</a>
                 <router-link v-else :to="{ name: 'login' }">Iniciar sesión</router-link>
                 <RouterLink :to="{ name: 'cart' }">
                     <span

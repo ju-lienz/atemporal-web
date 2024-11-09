@@ -7,7 +7,6 @@ export const useAuthStore = defineStore("auth", () => {
   const user = ref(JSON.parse(localStorage.getItem("user")) || null);
   const token = ref(recuperarToken());
 
-
   obtenerUsuario();
 
   async function obtenerUsuario() {
@@ -21,7 +20,6 @@ export const useAuthStore = defineStore("auth", () => {
     }
   }
 
-
   async function register(formData) {
     const res = await ClienteAxios.post('Clientes/Crear', formData);
     console.log(res)
@@ -30,9 +28,21 @@ export const useAuthStore = defineStore("auth", () => {
     } 
   }
 
-  return { user, token, obtenerUsuario, register };
+  async function logout(){
+    try{
+      const response = await ClienteAxios.post("Clientes/Logout");
+      user.value = null;
+      localStorage.removeItem("user");
+    }catch(e){
+      console.log(e);
+    }
+   
+  }
+
+  return { user, token, obtenerUsuario, register, logout};
 });
 
 function recuperarToken() {
   return localStorage.getItem("tokenAtemporal");
 }
+
