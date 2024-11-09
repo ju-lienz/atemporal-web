@@ -1,3 +1,4 @@
+@ -0,0 +1,29 @@
 <template>
     <div class="">
         <p @click="isOpenList = !isOpenList">{{ title }}</p>

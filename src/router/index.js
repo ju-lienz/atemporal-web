@@ -5,6 +5,7 @@ import ProductListView from "@/views/ProductListView.vue";
 import LoginView from "@/views/LoginView.vue";
 import RegisterView from "@/views/RegisterView.vue";
 import CartView from "@/views/CartView.vue";
+import { useAuthStore } from "@/stores/authStore";
 
 const routes = [
     {
@@ -46,7 +47,35 @@ const routes = [
 
 const router = createRouter({
     history: createWebHistory(''),
-    routes
+    routes,
+    scrollBehavior(to, from, savedPosition) {
+        if (savedPosition) {
+            return savedPosition;
+        } else {
+            return { top: 0 };
+        }
+    },
 })
+
+router.beforeEach( (to, from, next) => {
+
+    const store = useAuthStore(); 
+
+    console.log("store", store);
+    
+    if ( to.matched.some(route => route.meta.requiredAuth) )
+    {
+        if ( null === store.user )
+        {
+            return next('/login');
+        }
+
+        return next();
+    }
+    else 
+    {
+        next();
+    }
+}) 
 
 export default router

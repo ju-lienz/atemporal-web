@@ -1,7 +1,8 @@
 <template>
     <div class="container !py-28 flex-wrap min-h-screen">
         <div class="image-container w-full  md:w-1/2">
-            <img :src="`http://localhost:8000/storage/${product.producto_imagen}`" alt="" class="primary-image aspect-square overflow-hidden object-cover rounded-md">
+            <img :src="`http://127.0.0.1:8000/storage/${product.producto_imagen}`" alt=""
+                class="primary-image aspect-square overflow-hidden object-cover rounded-md">
             <!-- <img src="@/assets/images/imageProduct.png" alt="" class="secondary-image">
             <img src="@/assets/images/imageProduct.png" alt="" class="tertiary-image"> -->
         </div>
@@ -12,10 +13,10 @@
             <h3 class="price">${{ product.producto_precio }}</h3>
             <!-- <h5 class="fees">3 cuotas sin interés de $3216,3</h5> -->
             <h6 class="payment">Ver formas de pago</h6>
-            <button>
+            <button @click="store.addProduct(product)">
                 <ShoppingCartIcon /> Añadir al carrito
             </button>
-            <p class="cost-shipping">Costo de envío:</p>
+            <p class=" cost-shipping">Costo de envío:</p>
             <input type="text">
             <a href="">
                 <h6 class="postal-code">No sé mi código postal</h6>
@@ -27,12 +28,15 @@
 <script setup>
 import ShoppingCartIcon from '@/assets/icons/ShoppingCartIcon.vue';
 import { ClienteAxios } from '@/config/ClienteAxios';
+import { useCartStore } from '@/stores/cartStore';
 import { onBeforeMount, ref } from 'vue';
 import { useRoute } from 'vue-router'
 
 const route = useRoute();
 
 const product = ref({})
+const store = useCartStore();
+
 
 onBeforeMount(async () => {
 
