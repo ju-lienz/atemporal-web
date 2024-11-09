@@ -69,14 +69,17 @@
             <li class="font-medium w-full p-4 transition-all  hover:bg-primary/15">Contacto</li>
             <li class="font-medium w-full p-4 transition-all  hover:bg-primary/15">Ayuda</li>
         </ul>
-        <div class="absolute w-full bottom-0 flex justify-between text-center ">
+        <div v-if="authStore.user != null" class="absolute w-full bottom-0 flex justify-between text-center">
+            <a @click="authStore.logout"
+                class="w-full py-4 font-medium cursor-pointer transition-all hover:bg-primary/15">Cerrar sesión</a>
+        </div>
+        <div v-else class=" absolute w-full bottom-0 flex justify-between text-center">
             <router-link :to="{ name: 'register' }"
                 class="w-1/2 py-4  font-medium cursor-pointer transition-all  hover:bg-primary/15">Crear
                 cuenta</router-link>
             <router-link :to="{ name: 'login' }"
                 class="w-1/2  py-4 font-medium cursor-pointer transition-all  hover:bg-primary/15">Iniciar
                 sesión</router-link>
-
         </div>
     </div>
     <div class="lg:hidden transition-all fixed top-0 left-0 h-dvh w-full z-40" :class="{
