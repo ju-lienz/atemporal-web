@@ -10,9 +10,9 @@ export const useAuthStore = defineStore("auth", () => {
   async function obtenerUsuario() {
     try {
       const response = await ClienteAxios.get("Clientes/Datos");
-      user.value = response.data.cliente 
+      return response.data.cliente 
     } catch (e) {
-      user.value = null
+      return  null
     }
   }
 
@@ -20,7 +20,7 @@ export const useAuthStore = defineStore("auth", () => {
     const res = await ClienteAxios.post('Clientes/Crear', formData);
     console.log(res)
     if(res.data.status === 'OK'){  
-      await obtenerUsuario();
+      user.value = await obtenerUsuario();
     } 
   }
 
