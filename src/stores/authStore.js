@@ -18,12 +18,13 @@ export const useAuthStore = defineStore("auth", () => {
 
   async function register(formData) {
     const res = await ClienteAxios.post('Clientes/Crear', formData);
+    console.log(res)
     if(res.data.status === 'OK'){  
       await obtenerUsuario();
     } 
   }
 
-  return { user, token, get_user, register };
+  return { user, token, obtenerUsuario, register };
 });
 
 function recuperarToken() {
