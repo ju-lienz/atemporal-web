@@ -38,7 +38,7 @@ export const useCartStore = defineStore("cart", () => {
 
   async function sendProducts(){
     try {
-      const response = await ClienteAxios.post('Clientes/Carrito', cart.value);
+      const response = await ClienteAxios.post('Clientes/Carrito', {productos: cart.value});
       console.log(response);
     } catch (error) {
       console.log(error);
