@@ -28,6 +28,14 @@ export const useAuthStore = defineStore("auth", () => {
     } 
   }
 
+  async function login(formData) {
+    const res = await ClienteAxios.post('Clientes/Login', formData);
+    console.log('respuesta: ', res)
+    if(res.data.status === 'OK'){  
+      await obtenerUsuario();
+    } 
+  }
+
   async function logout(){
     try{
       const response = await ClienteAxios.post("Clientes/Logout");
@@ -38,7 +46,7 @@ export const useAuthStore = defineStore("auth", () => {
     }
   }
 
-  return { user, token, obtenerUsuario, register, logout};
+  return { user, token, obtenerUsuario, register, login, logout};
 });
 
 function recuperarToken() {

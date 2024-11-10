@@ -17,7 +17,8 @@
             </div>
             <div class="mb-4">
                 <label class="block text-gray-700 text-sm font-medium mb-2">Contraseña:</label>
-                <InputPassword @changePassword="(pass) => password = pass" />
+                <input type="password" name="" id="" v-model="password"
+                 class="border-0 p-3 outline-zinc-400 block w-full text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 rounded-md">
                 <div class="flex justify-between py-2">
                     <div class="inline-flex items-center gap-2 ">
                         <div class="relative flex cursor-pointer items-center rounded-full" data-ripple-dark="true">
@@ -58,6 +59,7 @@
 <script setup>
 import { ref } from 'vue';
 import InputPassword from '@/components/login/InputPassword.vue'
+import { useAuthStore } from '@/stores/authStore';
 
 
 // Variables reactivas para los datos del formulario
@@ -65,13 +67,27 @@ const email = ref('');
 const password = ref('');
 const error = ref(false);
 
+const authStore = useAuthStore();
+
 // Método que se ejecuta cuando se envía el formulario
-const sendForm = () => {
+const sendForm = async() => {
     validateForm();
     // Si no hay errores de email y contraseña
-    if (!error) {
-        // Envío a la BD
-        console.log('Formulario enviado exitosamente');
+    try {
+        const formdata = ref({
+            cliente_email: email.value,
+            cliente_password: password.value,
+        })
+        // formdata.append('cliente_nombre', cliente_nombre.value)
+        // formdata.append('cliente_direccion', cliente_direccion.value)
+        // formdata.append('cliente_localidad', cliente_localidad.value)
+        // formdata.append('cliente_email', cliente_email.value)
+        // formdata.append('cliente_telefono', cliente_telefono.value)
+        // formdata.append('cliente_password', cliente_password.value)
+        await authStore.login(formdata.value);
+       
+    } catch (error) {
+        console.log(error)
     }
 };
 
