@@ -1,5 +1,6 @@
 import { defineStore } from "pinia";
 import { computed, ref } from "vue";
+import { ClienteAxios } from "@/config/ClienteAxios";
 
 export const useCartStore = defineStore("cart", () => {
   
@@ -35,12 +36,22 @@ export const useCartStore = defineStore("cart", () => {
     localStorage.setItem("cart", JSON.stringify(cart.value));
   }
 
+  async function sendProducts(){
+    try {
+      const response = await ClienteAxios.post('Clientes/Carrito', cart.value);
+      console.log(response);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   return {
     cart,
     quantityOfProducts,
     subtotal,
     addProduct,
     substractProduct,
-    deleteProduct
+    deleteProduct,
+    sendProducts,
   };
 });

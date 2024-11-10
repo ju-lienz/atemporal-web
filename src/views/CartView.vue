@@ -23,9 +23,22 @@
                 <h2 class="text-lg py-3 inline font-semibold">Total:</h2>
                 <h2 class="text-xl py-3 inline">${{ store.subtotal }}</h2>
             </div>
-            <button class="bg-primary py-2 text-white rounded-md w-full mb-3">Finalizar compra</button>
-            <button class="bg-transparent py-2 text-primary rounded-md w-full border-primary border-2">Seguir
-                comprando</button>
+            <!-- <router-link :to="{ name: finalizarCompra() }"
+                class="w-full block bg-primary py-2 text-white rounded-md mb-3 text-center">Finalizar
+                compra
+            </router-link> -->
+            <!-- <button class="w-full block bg-primary py-2 text-white rounded-md mb-3 text-center"
+                @click="finalizarCompra">
+                Finalizar compra
+            </button> -->
+            <button class="w-full block bg-primary py-2 text-white rounded-md mb-3 text-center"
+                @click="finalizarCompra()">Finalizar
+                compra
+            </button>
+            <button
+                class="w-full block bg-transparent py-2 text-primary rounded-md border-primary border-2 text-center mb-1">
+                Seguir comprando
+            </button>
         </div>
     </div>
 </template>
@@ -33,12 +46,24 @@
 <script setup>
 import ShoppingCartIcon from '@/assets/icons/ShoppingCartIcon.vue'
 import { useCartStore } from '@/stores/cartStore';
+import { useAuthStore } from '@/stores/authStore'
 import Product from '@/components/cart/Product.vue';
 import { computed, ref, watch } from 'vue';
+import { useRoute, useRouter } from 'vue-router';
+/* import func from '../../vue-temp/vue-editor-bridge'; */
 
 const store = useCartStore()
 const products = computed(() => store.cart);
 
+const authStore = useAuthStore();
+const router = useRouter();
+
+function finalizarCompra() {
+    if (authStore.user != null) {
+        store.sendProducts();
+        router.push({ name: 'login' });
+    }
+}
 
 </script>
 
