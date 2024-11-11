@@ -15,10 +15,10 @@
                 <a v-if="authStore.user != null" @click="authStore.logout">Cerrar sesión</a>
                 <router-link v-else :to="{ name: 'login' }">Iniciar sesión</router-link>
                 <RouterLink :to="{ name: 'cart' }">
+                    <CartIconVue />
                     <span
                         class="absolute -top-2 -right-2 rounded-full bg-red-600 flex items-center justify-center aspect-square w-5 text-center"
                         style="font-size: .7rem; line-height: .7rem;">{{ store.quantityOfProducts }}</span>
-                    <CartIconVue />
                 </RouterLink>
             </ul>
         </div>
