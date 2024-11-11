@@ -3,9 +3,16 @@
     <div class="container  mx-auto w-full min-h-screen flex items-center justify-center">
         <form class="bg-white  shadow-md rounded-xl px-8 pt-6 pb-8 mb-4 w-full max-w-xl" @submit.prevent="sendForm">
             <h1 class="mb-4 font-bold text-2xl text-stone-800">Iniciar sesión</h1>
+            <!-- mensaje de inicio de sesion incorrecto -->
             <div v-if="error" class="bg-red-100 border-l-4 border-red-500 text-orange-700 p-2 mb-4" role="alert">
                 <p class="font-bold m-2 text-sm">Error</p>
                 <p class="m-2 text-sm">El mail o contraseña son incorrectos</p>
+            </div>
+            <!-- mensaje de inicio de sesion correcto -->
+            <div v-if="loginSuccess" class="bg-green-100 border-l-4 border-green-600 text-green-700 p-2 mb-4"
+                role="alert">
+                <p class="font-bold m-2 text-sm">¡Éxito!</p>
+                <p class="m-2 text-sm">Has iniciado sesión correctamente</p>
             </div>
             <div class="mb-4">
                 <label class="block text-gray-700 text-sm font-medium mb-2" for="username">
@@ -17,7 +24,8 @@
             </div>
             <div class="mb-4">
                 <label class="block text-gray-700 text-sm font-medium mb-2">Contraseña:</label>
-                <InputPassword @changePassword="(pass) => password = pass" />
+                <input type="password" name="" id="" v-model="password"
+                    class="border-0 p-3 outline-zinc-400 block w-full text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 rounded-md">
                 <div class="flex justify-between py-2">
                     <div class="inline-flex items-center gap-2 ">
                         <div class="relative flex cursor-pointer items-center rounded-full" data-ripple-dark="true">
@@ -58,21 +66,36 @@
 <script setup>
 import { ref } from 'vue';
 import InputPassword from '@/components/login/InputPassword.vue'
+import { useAuthStore } from '@/stores/authStore';
 
 
 // Variables reactivas para los datos del formulario
 const email = ref('');
 const password = ref('');
 const error = ref(false);
+const loginSuccess = ref(false);
+
+const authStore = useAuthStore();
 
 // Método que se ejecuta cuando se envía el formulario
-const sendForm = () => {
+const sendForm = async () => {
+    error.value = false;
+    loginSuccess.value = false;
     validateForm();
-    // Si no hay errores de email y contraseña
-    if (!error) {
-        // Envío a la BD
-        console.log('Formulario enviado exitosamente');
+
+    try {
+        const formdata = ref({
+            cliente_email: email.value,
+            cliente_password: password.value,
+        })
+        await authStore.login(formdata.value);
+        loginSuccess.value = true;
+
+    } catch (err) {
+        console.log(err);
+        error.value = true;
     }
+
 };
 
 // Método que realiza la validación del formulario
