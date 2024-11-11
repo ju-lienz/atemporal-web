@@ -15,8 +15,20 @@ export const useCartStore = defineStore("cart", () => {
     );
     if (indexProductInCart != -1) {
       cart.value[indexProductInCart].cantidad++;
+      console.log(productToAdd);
+      Swal.fire({
+        title: "Cantidad actualizada",
+        text: `Has agregado una unidad más de ${productToAdd.producto_nombre}.`,
+        icon: "success"
+      });
     } else {
       cart.value.push({ ...productToAdd, cantidad: 1 });
+      console.log(productToAdd);
+      Swal.fire({
+        title: "Producto agregado",
+        text: `El producto ${productToAdd.producto_nombre} fue agregado correctamente a tu carrito.`,
+        icon: "success"
+      });
     }
     localStorage.setItem("cart", JSON.stringify(cart.value));
   }
