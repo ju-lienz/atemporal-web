@@ -1,13 +1,19 @@
-import Swal from 'sweetalert2'
+import Swal from "sweetalert2";
 import { defineStore } from "pinia";
 import { computed, ref } from "vue";
 import { ClienteAxios } from "@/config/ClienteAxios";
 
 export const useCartStore = defineStore("cart", () => {
-  
   const cart = ref(JSON.parse(localStorage.getItem("cart")) ?? []);
-  const quantityOfProducts = computed(() => cart.value.reduce((quantity, product) => product.cantidad + quantity, 0))
-  const subtotal = computed(() => cart.value.reduce((amount, product) => product.cantidad * product.producto_precio + amount, 0))
+  const quantityOfProducts = computed(() =>
+    cart.value.reduce((quantity, product) => product.cantidad + quantity, 0)
+  );
+  const subtotal = computed(() =>
+    cart.value.reduce(
+      (amount, product) => product.cantidad * product.producto_precio + amount,
+      0
+    )
+  );
 
   function addProduct(productToAdd) {
     const indexProductInCart = cart.value.findIndex(
@@ -19,7 +25,7 @@ export const useCartStore = defineStore("cart", () => {
       Swal.fire({
         title: "Cantidad actualizada",
         text: `Has agregado una unidad más de ${productToAdd.producto_nombre}.`,
-        icon: "success"
+        icon: "success",
       });
     } else {
       cart.value.push({ ...productToAdd, cantidad: 1 });
@@ -27,7 +33,7 @@ export const useCartStore = defineStore("cart", () => {
       Swal.fire({
         title: "Producto agregado",
         text: `El producto ${productToAdd.producto_nombre} fue agregado correctamente a tu carrito.`,
-        icon: "success"
+        icon: "success",
       });
     }
     localStorage.setItem("cart", JSON.stringify(cart.value));
@@ -44,25 +50,39 @@ export const useCartStore = defineStore("cart", () => {
   }
 
   function deleteProduct(productToDelete) {
-    cart.value = cart.value.filter(product => product.id != productToDelete.id)
-    
+    cart.value = cart.value.filter(
+      (product) => product.id != productToDelete.id
+    );
+
     localStorage.setItem("cart", JSON.stringify(cart.value));
   }
 
-  async function sendProducts(){
+  async function sendProducts() {
     try {
-      const response = await ClienteAxios.post('Clientes/Carrito', {productos: cart.value});
-      console.log(response);
-  
-      Swal.fire({
-        title: "The Internet?",
-        text: "That thing is still around?",
-        icon: "success"
-      }).then(result => {
-        localStorage.setItem("cart", JSON.stringify([]));
-        window.location.href = response.data;
+      Swal.showLoading();
+      if (cart.value.length < 0) {
+        Swal.close();
+        Swal.fire({
+          title: "Carrito sin productos",
+          text: "",
+          icon: "error",
+        });
+      }
+      const response = await ClienteAxios.post("Clientes/Carrito", {
+        productos: cart.value,
       });
 
+      if (response) {
+        Swal.close();
+        Swal.fire({
+          title: "Pedido realizado",
+          text: "Te redireccionaremos a enviar el whatsapp al administrador para seguir tu pedido",
+          icon: "success",
+        }).then((result) => {
+          localStorage.setItem("cart", JSON.stringify([]));
+          window.location.href = response.data;
+        });
+      }
     } catch (error) {
       console.log(error);
     }

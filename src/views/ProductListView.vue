@@ -56,6 +56,7 @@ onMounted(async () => {
     if (route.params?.name) {
         const response = await ClienteAxios.get(`/Categorias/${route.params?.name}`)
         if (response.status == 200) {
+            console.log(response)
             products.value = response.data
         }
         return
@@ -65,7 +66,7 @@ onMounted(async () => {
     if (response.status == 200) {
         products.value = response.data
     }
-    return 
+    return
 })
 
 const typeRaw = ref(["pulsera", "cadenas", "aros", "reloj"])
