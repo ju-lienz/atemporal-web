@@ -40,6 +40,8 @@ export const useCartStore = defineStore("cart", () => {
     try {
       const response = await ClienteAxios.post('Clientes/Carrito', {productos: cart.value});
       console.log(response);
+      localStorage.setItem("cart", JSON.stringify([]));
+      window.location.href = response.data;
     } catch (error) {
       console.log(error);
     }

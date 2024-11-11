@@ -8,6 +8,7 @@
                 <p class="font-bold m-2 text-sm">Error</p>
                 <p class="m-2 text-sm">El mail o contraseña son incorrectos</p>
             </div>
+            <!-- mensaje de inicio de sesion correcto -->
             <div v-if="loginSuccess" class="bg-green-100 border-l-4 border-green-600 text-green-700 p-2 mb-4"
                 role="alert">
                 <p class="font-bold m-2 text-sm">¡Éxito!</p>
