@@ -1,7 +1,14 @@
-# Vue 3 + Vite
+# Atemporal Relojes y Accesorios - Frontend
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+Este repositorio contiene el código fuente del **frontend** de la página web para **Atemporal Relojes y Accesorios**, una tienda dedicada a la venta de relojes y accesorios de moda. El proyecto está desarrollado utilizando **Vue 3** y **Tailwind CSS** para ofrecer una experiencia de usuario moderna, responsiva e intuitiva.
 
-## Recommended IDE Setup
+---
 
-- [VS Code](https://code.visualstudio.com/) + [Vue - Official](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (previously Volar) and disable Vetur
+## 🚀 **Tecnologías utilizadas**
+
+- **Vue 3**: Framework progresivo de JavaScript para la construcción de interfaces de usuario.
+- **Tailwind CSS**: Framework de CSS para diseñar interfaces de usuario con un enfoque utility-first.
+- **JavaScript**: Lenguaje de programación utilizado para la lógica de la aplicación.
+- **HTML5** y **CSS3**: Tecnologías base para la estructura y estilo del sitio web.
+
+---
