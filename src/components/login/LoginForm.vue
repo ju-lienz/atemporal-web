@@ -1,15 +1,15 @@
-@ -0,0 +1,99 @@
 <template>
     <div class="container  mx-auto w-full min-h-screen flex items-center justify-center">
         <form class="bg-white  shadow-md rounded-xl px-8 pt-6 pb-8 mb-4 w-full max-w-xl" @submit.prevent="sendForm">
             <h1 class="mb-4 font-bold text-2xl text-stone-800">Iniciar sesión</h1>
             <!-- mensaje de inicio de sesion incorrecto -->
-            <div v-if="error" class="bg-red-100 border-l-4 border-red-500 text-orange-700 p-2 mb-4" role="alert">
+            <div v-if="error && !loginSuccess" class="bg-red-100 border-l-4 border-red-500 text-orange-700 p-2 mb-4"
+                role="alert">
                 <p class="font-bold m-2 text-sm">Error</p>
                 <p class="m-2 text-sm">El mail o contraseña son incorrectos</p>
             </div>
             <!-- mensaje de inicio de sesion correcto -->
-            <div v-if="loginSuccess" class="bg-green-100 border-l-4 border-green-600 text-green-700 p-2 mb-4"
+            <div v-if="loginSuccess && !error" class="bg-green-100 border-l-4 border-green-600 text-green-700 p-2 mb-4"
                 role="alert">
                 <p class="font-bold m-2 text-sm">¡Éxito!</p>
                 <p class="m-2 text-sm">Has iniciado sesión correctamente</p>
@@ -20,7 +20,7 @@
                 </label>
                 <input :class="{ '!border-red-500': error }"
                     class="border-0 p-3 outline-zinc-400 block w-full text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 rounded-md"
-                    required id="username" type="text" placeholder="Ingrese su e-mail" v-model="email">
+                    required id="username" type="email" placeholder="Ingrese su e-mail" v-model="email">
             </div>
             <div class="mb-4">
                 <label class="block text-gray-700 text-sm font-medium mb-2">Contraseña:</label>
@@ -65,23 +65,18 @@
 </template>
 <script setup>
 import { ref } from 'vue';
-import InputPassword from '@/components/login/InputPassword.vue'
 import { useAuthStore } from '@/stores/authStore';
-
 
 // Variables reactivas para los datos del formulario
 const email = ref('');
 const password = ref('');
-const error = ref(false);
-const loginSuccess = ref(false);
+const error = ref(null);
+const loginSuccess = ref(null);
 
 const authStore = useAuthStore();
 
 // Método que se ejecuta cuando se envía el formulario
 const sendForm = async () => {
-    error.value = false;
-    loginSuccess.value = false;
-    validateForm();
 
     try {
         const formdata = ref({
@@ -90,34 +85,15 @@ const sendForm = async () => {
         })
         await authStore.login(formdata.value);
         loginSuccess.value = true;
+        error.value = null;
 
     } catch (err) {
         console.log(err);
         error.value = true;
+        loginSuccess.value = null;
     }
 
 };
 
-// Método que realiza la validación del formulario
-const validateForm = () => {
-    error.value = false;
-
-    if (!validateEmail(email.value)) {
-        error.value = true;
-    }
-
-    if (password.value.length < 6) {
-        error.value = true;
-    }
-};
-
-// Método que valida el formato del correo electrónico
-const validateEmail = (email) => {
-    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    // La función test de la expresión regular verifica si el
-    // email ingresado coincide con el patrón definido.
-    // Si coincide, retorna true, indicando un email válido.
-    return re.test(email);
-};
 </script>
 <style scoped></style>
