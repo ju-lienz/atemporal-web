@@ -41,7 +41,7 @@ const store = useCartStore();
 onBeforeMount(async () => {
 
     const id = route.params.id;
-    const response = await ClienteAxios.get(`/Productos/${id}`);
+    const response = await ClienteAxios.get(`Productos/${id}`);
     if (response.status == 200) {
         product.value = response.data
     }
