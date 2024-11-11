@@ -52,7 +52,7 @@
             <button
                 class="bg-orange-900 block w-full hover:bg-orange-800 text-white font-medium py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                 type="submit">
-                Crear cuenta
+                Ingresar
             </button>
             <div class="flex flex-col items-center">
                 <p class="text-s text-center block py-2 text-gray-700 pt-4">¿No tienes una cuenta? <router-link
