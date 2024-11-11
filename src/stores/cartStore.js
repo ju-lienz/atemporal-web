@@ -1,3 +1,4 @@
+import Swal from 'sweetalert2'
 import { defineStore } from "pinia";
 import { computed, ref } from "vue";
 import { ClienteAxios } from "@/config/ClienteAxios";
@@ -40,8 +41,16 @@ export const useCartStore = defineStore("cart", () => {
     try {
       const response = await ClienteAxios.post('Clientes/Carrito', {productos: cart.value});
       console.log(response);
-      localStorage.setItem("cart", JSON.stringify([]));
-      window.location.href = response.data;
+  
+      Swal.fire({
+        title: "The Internet?",
+        text: "That thing is still around?",
+        icon: "success"
+      }).then(result => {
+        localStorage.setItem("cart", JSON.stringify([]));
+        window.location.href = response.data;
+      });
+
     } catch (error) {
       console.log(error);
     }
