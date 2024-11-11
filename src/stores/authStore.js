@@ -1,3 +1,4 @@
+import Swal from 'sweetalert2'
 import client from "@/config/client";
 import { ClienteAxios } from "@/config/ClienteAxios";
 import { defineStore } from "pinia";
@@ -41,6 +42,11 @@ export const useAuthStore = defineStore("auth", () => {
       const response = await ClienteAxios.post("Clientes/Logout");
       user.value = null;
       localStorage.removeItem("user");
+      Swal.fire({
+        title: "Sesión cerrada",
+        text: "Has cerrado la sesión correctamente",
+        icon: "success"
+      });
     }catch(e){
       console.log(e);
     }
