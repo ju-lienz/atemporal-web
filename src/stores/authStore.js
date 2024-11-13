@@ -1,4 +1,4 @@
-import Swal from 'sweetalert2'
+import Swal from "sweetalert2";
 import client from "@/config/client";
 import { ClienteAxios } from "@/config/ClienteAxios";
 import { defineStore } from "pinia";
@@ -22,51 +22,55 @@ export const useAuthStore = defineStore("auth", () => {
   }
 
   async function register(formData) {
-    const res = await ClienteAxios.post('Clientes/Crear', formData);
-    console.log(res)
-    if(res.data.status === 'OK'){  
+    const res = await ClienteAxios.post("Clientes/Crear", formData);
+    console.log(res);
+    if (res.data.status === "OK") {
+      Swal.fire({
+        title: "Cuenta registrada",
+        text: "Tu cuenta ha sido registrada correctamente",
+        icon: "success",
+      });
       await obtenerUsuario();
-    } 
+    }
   }
 
   async function login(formData) {
-    const res = await ClienteAxios.post('Clientes/Login', formData);
-    console.log('respuesta: ', res)
-    if(res.data.status === 'OK'){  
+    const res = await ClienteAxios.post("Clientes/Login", formData);
+    console.log("respuesta: ", res);
+    if (res.data.status === "OK") {
       Swal.fire({
         title: "Inicio exitoso",
         // text: `El producto ${productToAdd.producto_nombre} fue agregado correctamente a tu carrito.`,
-        icon: "success"
+        icon: "success",
       });
       await obtenerUsuario();
-    return
+      return;
     }
     Swal.fire({
       title: "Ingreso erróneo",
       // text: `El producto ${productToAdd.producto_nombre} fue agregado correctamente a tu carrito.`,
-      icon: "error"
+      icon: "error",
     });
   }
 
-  async function logout(){
-    try{
+  async function logout() {
+    try {
       const response = await ClienteAxios.post("Clientes/Logout");
       user.value = null;
       localStorage.removeItem("user");
       Swal.fire({
         title: "Sesión cerrada",
         text: "Has cerrado la sesión correctamente",
-        icon: "success"
+        icon: "success",
       });
-    }catch(e){
+    } catch (e) {
       console.log(e);
     }
   }
 
-  return { user, token, obtenerUsuario, register, login, logout};
+  return { user, token, obtenerUsuario, register, login, logout };
 });
 
 function recuperarToken() {
   return localStorage.getItem("tokenAtemporal");
 }
-
