@@ -3,23 +3,23 @@
         <div class="image-container w-full  md:w-1/2">
             <img :src="`http://127.0.0.1:8000/storage/${product.producto_imagen}`" alt=""
                 class="primary-image aspect-square overflow-hidden object-cover rounded-md">
-            <!-- <img src="@/assets/images/imageProduct.png" alt="" class="secondary-image">
-            <img src="@/assets/images/imageProduct.png" alt="" class="tertiary-image"> -->
         </div>
-        <div class="text-container pt-4 md:pl-10 w-full md:w-1/2 md:max-w-lg">
-            <h1 class="arsenica text-2xl">{{ product.producto_nombre }}</h1>
-            <p class="detail">{{ product.producto_descripcion }}
+        <div class="text-container pt-1 md:pl-10 w-full md:w-1/2 md:max-w-lg">
+            <h1 class="arsenica text-3xl pb-1 font-semibold text-[#423F3E]">{{ product.producto_nombre }}</h1>
+            <p class=" text-[#423F3E] text-lg">{{ product.producto_descripcion }}
             </p>
-            <h3 class="price">${{ product.producto_precio }}</h3>
-            <!-- <h5 class="fees">3 cuotas sin interés de $3216,3</h5> -->
-            <h6 class="payment">Ver formas de pago</h6>
-            <button @click="store.addProduct(product)">
+            <h3 class="price font-semibold text-3xl py-6 text-[#423F3E]">${{ product.producto_precio }}</h3>
+            <h6 class="text-base underline font-[1.5rem] text-[#423F3E] pb-8">Ver formas
+                de pago</h6>
+            <button @click="store.addProduct(product)"
+                class="w-full p-2 bg-[#6e3c2a] text-[#FBFBFB] rounded-[0.3rem] flex justify-center gap-2 cursor-pointer">
                 <ShoppingCartIcon /> Añadir al carrito
             </button>
-            <p class=" cost-shipping">Costo de envío:</p>
-            <input type="text">
+            <p class="mt-6 mb-[0.2rem]">Costo de envío:</p>
+            <input type="text"
+                class="h-12 w-full text-base p-4 rounded-lg bg-transparent border border-[#593122] focus:outline-none">
             <a href="">
-                <h6 class="postal-code">No sé mi código postal</h6>
+                <h6 class="text-[#847E7A] text-[0.9rem] mt-[0.6rem] underline">No sé mi código postal</h6>
             </a>
         </div>
     </div>
@@ -80,78 +80,5 @@ onBeforeMount(async () => {
 .tertiary-image {
     grid-area: tertiary-image;
     width: 100%;
-}
-
-
-
-.payment {
-    font-size: 1rem;
-    text-decoration: underline;
-    font-family: 1.5rem;
-    color: #423F3E;
-    padding-bottom: 2rem;
-}
-
-h1 {
-    font-weight: 600;
-    color: #423F3E;
-}
-
-.detail {
-    font-weight: 400;
-    color: #423F3E;
-}
-
-h6 {
-    text-decoration: underline;
-    color: #423F3E;
-    padding-bottom: 2rem
-}
-
-.price {
-    padding: 1.5rem 0rem 1.5rem 0rem;
-    font-weight: 600;
-    color: #423F3E;
-}
-
-.fees {
-    margin-bottom: 0.4rem;
-    color: #423F3E;
-}
-
-input {
-    height: 3rem;
-    width: 100%;
-    font-size: 1rem;
-    padding: 1rem;
-    border-radius: .5rem;
-    background-color: transparent;
-    border: 1px solid #593122;
-    margin: 0;
-    outline: none;
-}
-
-button {
-    width: 100%;
-    padding: 0.5rem;
-    background-color: #6e3c2a;
-    color: #FBFBFB;
-    border: none;
-    border-radius: 0.3rem;
-    display: flex;
-    justify-content: center;
-    gap: .5rem;
-    cursor: pointer;
-}
-
-.cost-shipping {
-    margin-top: 1.5rem;
-    margin-bottom: 0.2rem;
-}
-
-.postal-code {
-    color: #847E7A;
-    font-size: 0.9rem;
-    margin-top: 0.6rem;
 }
 </style>
