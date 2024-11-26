@@ -16,28 +16,31 @@
 </template>
 
 <script setup>
-import CategoryCard from '@/components/home/CategoryCard.vue';
+import CategoryCard from "@/components/home/CategoryCard.vue";
+import marroquineriaImage from "@/assets/Marroquineria-categoria.jpg";
+import relojesImage from "@/assets/relojes-categoria.jpg";
+import joyasImage from "@/assets/Joyas-categoria.jpg";
+import accesoriosImage from "@/assets/Accesorios-categoria.jpg";
 
 const cardMarroquineria = {
-    image: 'Marroquineria-categoria.jpg',
-    text: 'Marroquineria',
+  image: marroquineriaImage,
+  text: "Marroquineria",
 };
 
 const cardRelojes = {
-    image: 'relojes-categoria.jpg',
-    text: 'Relojes',
+  image: relojesImage,
+  text: "Relojes",
 };
 
 const cardJoyas = {
-    image: 'Joyas-categoria.jpg',
-    text: 'Joyas',
+  image: joyasImage,
+  text: "Joyas",
 };
 
 const cardAccesorios = {
-    image: 'Accesorios-categoria.jpg',
-    text: 'Accesorios',
+  image: accesoriosImage,
+  text: "Accesorios",
 };
-
 </script>
 
 <style scoped>
