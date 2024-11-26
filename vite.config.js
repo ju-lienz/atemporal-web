@@ -10,6 +10,10 @@ export default defineConfig({
     vue(),
     VueDevTools(),
   ],
+  build: {
+    assetsDir: 'src/assets',
+    copyPublicDir: true
+  },
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
