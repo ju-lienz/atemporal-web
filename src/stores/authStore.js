@@ -23,7 +23,6 @@ export const useAuthStore = defineStore("auth", () => {
 
   async function register(formData) {
     const res = await ClienteAxios.post("Clientes/Crear", formData);
-    console.log(res);
     if (res.data.status === "OK") {
       Swal.fire({
         title: "Cuenta registrada",
