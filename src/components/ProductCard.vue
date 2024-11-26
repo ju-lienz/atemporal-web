@@ -2,7 +2,7 @@
     <div
         :class="`w-[calc(100%/2-.75rem)] md:w-[calc(100%/3-1rem)] lg:w-[calc(100%/4-1.1rem)] bg-white shadow-md m-1 rounded-lg overflow-hidden hover:shadow-lg ${zoom ? 'hover:scale-[1.02]' : ''} transition-all `">
         <router-link :to="{ name: 'detail', params: { id: product.id } }">
-            <img class="w-full h-40 object-cover" :src="`${import.meta.env.VITE_API_URL}/api/${product.producto_imagen}`"
+            <img class="w-full h-40 object-cover" :src="imagen"
                 alt="product image">
             <div class="p-3 pb-0">
                 <h3 class="text-gray-900 font-bold text-xl tracking-tight truncate">{{ product.producto_nombre
@@ -24,9 +24,10 @@
 <script setup>
 import ShoppingCartIcon from '@/assets/icons/ShoppingCartIcon.vue';
 import { useCartStore } from '@/stores/cartStore';
+import { computed, ref } from 'vue';
 
 const store = useCartStore();
-
+const imagen = ref(`${import.meta.env.VITE_API_URL}/api/${product.producto_imagen}`)
 const props = defineProps({
     product: {
         type: Object,

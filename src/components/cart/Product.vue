@@ -2,7 +2,7 @@
     <div
         class="border rounded-md text-gray-600 border-gray-400/60 p-2 gap-2 sm:gap-4 flex flex-col sm:flex-row w-full mb-4 bg-stone-100">
         <!-- -Imagen del producto -->
-        <img :src="`${import.meta.env.VITE_API_URL}/api/${product.producto_imagen}`" alt=""
+        <img :src="imagen" alt=""
             class="w-full sm:w-[10%] aspect-[14/16] object-cover rounded-md">
 
         <div class="w-full sm:w-5/12 relative">
@@ -37,9 +37,10 @@
 <script setup>
 import {useCartStore} from '@/stores/cartStore'
 import TrashIcon from '@/assets/icons/TrashIcon.vue'
+import { ref } from 'vue';
 
 const store = useCartStore()
-
+const imagen = ref(`${import.meta.env.VITE_API_URL}/api/${product.producto_imagen}`)
 defineProps({
     product: {
         type: Object,
