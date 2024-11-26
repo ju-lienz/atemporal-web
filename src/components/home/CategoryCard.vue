@@ -29,10 +29,7 @@ const props = defineProps({
     }
 })
 
-const imageSrc = ref()
-watchEffect(async () => {
-    imageSrc.value = (await import(/* @vite-ignore */ `../../assets/images/${props.image}`)).default
-})
+
 
 </script>
 
