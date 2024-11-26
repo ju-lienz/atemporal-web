@@ -29,21 +29,24 @@
 import ShoppingCartIcon from '@/assets/icons/ShoppingCartIcon.vue';
 import { ClienteAxios } from '@/config/ClienteAxios';
 import { useCartStore } from '@/stores/cartStore';
-import { onBeforeMount, ref } from 'vue';
+import { onBeforeMount, ref, computed } from 'vue';
 import { useRoute } from 'vue-router'
 
 const route = useRoute();
-
 const product = ref({})
 const store = useCartStore();
 
-const imagen = ref(`${import.meta.env.VITE_API_URL}/${product.value.producto_nombre}`)
-onBeforeMount(async () => {
+const imagen = computed(() => {
+    return `${import.meta.env.VITE_API_URL}/api/${product.value.producto_imagen}`
+})
 
-    const id = route.params.id;
-    const response = await ClienteAxios.get(`Productos/${id}`);
-    if (response.status == 200) {
-        product.value = response.data
+onBeforeMount(async () => {
+    try {
+        const { id } = route.params;
+        const { data } = await ClienteAxios.get(`Productos/${id}`);
+        product.value = data;
+    } catch (error) {
+        console.error('Error fetching product:', error);
     }
 });
 
