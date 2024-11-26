@@ -1,7 +1,7 @@
 <template>
     <div class="container !py-28 flex-wrap min-h-screen">
         <div class="image-container w-full  md:w-1/2">
-            <img :src="`http://127.0.0.1:8000/storage/${product.producto_imagen}`" alt=""
+            <img :src="imagen" alt=""
                 class="primary-image aspect-square overflow-hidden object-cover rounded-md">
         </div>
         <div class="text-container pt-1 md:pl-10 w-full md:w-1/2 md:max-w-lg">
@@ -37,7 +37,7 @@ const route = useRoute();
 const product = ref({})
 const store = useCartStore();
 
-
+const imagen = ref(`${import.meta.env.VITE_API_URL}/${product.value.producto_nombre}`)
 onBeforeMount(async () => {
 
     const id = route.params.id;
