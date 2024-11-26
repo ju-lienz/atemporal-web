@@ -17,10 +17,10 @@
 
 <script setup>
 import CategoryCard from "@/components/home/CategoryCard.vue";
-import marroquineriaImage from "@/assets/Marroquineria-categoria.jpg";
-import relojesImage from "@/assets/relojes-categoria.jpg";
-import joyasImage from "@/assets/Joyas-categoria.jpg";
-import accesoriosImage from "@/assets/Accesorios-categoria.jpg";
+import marroquineriaImage from "@/assets/images/Marroquineria-categoria.jpg";
+import relojesImage from "@/assets/images/relojes-categoria.jpg";
+import joyasImage from "@/assets/images/Joyas-categoria.jpg";
+import accesoriosImage from "@/assets/images/Accesorios-categoria.jpg";
 
 const cardMarroquineria = {
   image: marroquineriaImage,
