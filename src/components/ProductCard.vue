@@ -27,7 +27,6 @@ import { useCartStore } from '@/stores/cartStore';
 import { computed, ref } from 'vue';
 
 const store = useCartStore();
-const imagen = ref(`${import.meta.env.VITE_API_URL}/api/${product.producto_imagen}`)
 const props = defineProps({
     product: {
         type: Object,
@@ -42,6 +41,7 @@ const props = defineProps({
         default: false
     }
 })
+const imagen = ref(`${import.meta.env.VITE_API_URL}/api/${props.product.producto_imagen}`)
 </script>
 <style scoped>
 .card {
