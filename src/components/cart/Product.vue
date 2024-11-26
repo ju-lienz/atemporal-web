@@ -48,7 +48,7 @@ defineProps({
     },
 })
 
-const imagen = ref(`${import.meta.env.VITE_API_URL}/api/${product.producto_imagen}`)
+const imagen = ref(`${import.meta.env.VITE_API_URL}/storage/${product.producto_imagen}`)
 
 
 
