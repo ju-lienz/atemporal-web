@@ -40,7 +40,7 @@ import TrashIcon from '@/assets/icons/TrashIcon.vue'
 import { ref } from 'vue';
 
 const store = useCartStore()
-defineProps({
+const props = defineProps({
     product: {
         type: Object,
         default: {
@@ -48,7 +48,7 @@ defineProps({
     },
 })
 
-const imagen = ref(`${import.meta.env.VITE_API_URL}/storage/${product.producto_imagen}`)
+const imagen = ref(`${import.meta.env.VITE_API_URL}/storage/${props.product.producto_imagen}`)
 
 
 
