@@ -36,7 +36,7 @@ export const useAuthStore = defineStore("auth", () => {
   async function login(formData) {
     const res = await ClienteAxios.post("Clientes/Login", formData);
     // console.log(res.response)
-    if (res.response.status == 200) {
+    if (res.status == 200) {
       Swal.fire({
         title: "Inicio exitoso",
         icon: "success",
