@@ -22,14 +22,22 @@ export const useAuthStore = defineStore("auth", () => {
   }
 
   async function register(formData) {
-    const res = await ClienteAxios.post("Clientes/Crear", formData);
-    if (res.data.status === "OK") {
+    try {
+      const res = await ClienteAxios.post("Clientes/Crear", formData);
+
+      if (res.status == 200) {
+        Swal.fire({
+          title: "Cuenta registrada",
+          text: "Tu cuenta ha sido registrada correctamente",
+          icon: "success",
+        });
+        await obtenerUsuario();
+      }
+    } catch (error) {
       Swal.fire({
-        title: "Cuenta registrada",
-        text: "Tu cuenta ha sido registrada correctamente",
-        icon: "success",
+        title: "Registro erróneo",
+        icon: "error",
       });
-      await obtenerUsuario();
     }
   }
 
@@ -46,7 +54,6 @@ export const useAuthStore = defineStore("auth", () => {
         return;
       }
     } catch (error) {
-      
       Swal.fire({
         title: "Ingreso erróneo",
         icon: "error",
