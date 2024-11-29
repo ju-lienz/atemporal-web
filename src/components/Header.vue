@@ -5,9 +5,7 @@
                 <h1 class="atemporal">Atemporal</h1>
             </RouterLink>
             <ul>
-                <li>
-                    <router-link :to="{ name: 'category', params: 'Relojes' }">Relojes</router-link>
-                </li>
+                <li>Relojes</li>
                 <li>Accesorios </li>
                 <li>Ofertas</li>
                 <li>Nosotros</li>
