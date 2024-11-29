@@ -52,14 +52,15 @@ const router = useRouter();
 
 function finalizarCompra() {
     if (authStore.user != null) {
-        Swal.fire({
-            icon: 'warning',
-            title: 'Debes iniciar sesión',
-            timer: 1000 
-        })
+
         store.sendProducts();
         return
     }
+    Swal.fire({
+        icon: 'warning',
+        title: 'Debes iniciar sesión',
+        timer: 1000
+    })
     router.push({ name: 'login' });
 }
 
