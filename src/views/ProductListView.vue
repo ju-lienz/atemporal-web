@@ -2,10 +2,10 @@
     <div class="container flex flex-col flex-wrap lg:flex-row !px-4 !py-16 md:!py-32">
         <h3 v-if="route.params.name" class="w-full pl-64 text-2xl capitalize py-2">{{ route.params.name }}</h3>
         <div class="filters w-1/5 hidden lg:block">
-            <div class="filter-title">
+            <!-- <div class="filter-title">
                 <FilterIcon :width="20" />Filtros
-            </div>
-            <ul v-if="types.length != 0" class="ul">
+            </div> -->
+            <!-- <ul v-if="types.length != 0" class="ul">
                 <li>Tipo:</li>
                 <CheckInput v-for="(elm, index) in types" :key="index" :elm="elm" />
             </ul>
@@ -16,13 +16,13 @@
             <ul v-if="materials.length != 0" class="ul">
                 <li>Material:</li>
                 <CheckInput v-for="(elm, index) in materials" :key="index" :elm="elm" />
-            </ul>
+            </ul> -->
 
         </div>
 
 
         <div class="flex lg:hidden flex-wrap gap-y-4 py-4">
-            <div class="w-full flex gap-2 font-semibold">
+            <!-- <div class="w-full flex gap-2 font-semibold">
                 <FilterIcon :width="20" class="lg:hidden" />Filtros
             </div>
             <FilterList :lista="types" title="Tipo" :listOpen="listStore.type" class="w-1/3 border p-2 bg-white" />
@@ -34,8 +34,8 @@
         <div class="product-container w-full lg:w-4/5">
             <p v-if="products.length == 0">No hay productos</p>
             <ProductCard v-for="(product, index) in products" :key="index" :product="product" />
+        </div> -->
         </div>
-    </div>
 </template>
 <script setup>
 import ProductCard from '@/components/ProductCard.vue';
