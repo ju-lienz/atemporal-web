@@ -1,6 +1,5 @@
 <template>
     <div class="container flex flex-col flex-wrap lg:flex-row !px-4 !py-16 md:!py-32">
-        <h3 v-if="route.params.name" class="w-full pl-64 text-2xl capitalize py-2">{{ route.params.name }}</h3>
         <!-- <div class="filters w-1/5 hidden lg:block"> -->
         <!-- <div class="filter-title">
                 <FilterIcon :width="20" />Filtros
@@ -27,11 +26,12 @@
             </div>
             <FilterList :lista="types" title="Tipo" :listOpen="listStore.type" class="w-1/3 border p-2 bg-white" />
             <FilterList :lista="materials" title="Material" :listOpen="listStore.gender"
-                class="w-1/3 border p-2 bg-white" />
+            class="w-1/3 border p-2 bg-white" />
             <FilterList :lista="genders" title="Género" :listOpen="listStore.materials"
-                class="w-1/3 border p-2 bg-white" />
+            class="w-1/3 border p-2 bg-white" />
         </div> -->
         <div class="product-container w-full">
+            <h3 v-if="route.params.name" class="w-full pl-2 text-2xl capitalize py-2">{{ route.params.name }}</h3>
             <p v-if="products.length == 0">No hay productos</p>
             <ProductCard v-else v-for="(product, index) in products" :key="index" :product="product" />
             <!-- </div> -->
