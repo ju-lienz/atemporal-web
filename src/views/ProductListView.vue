@@ -30,11 +30,11 @@
                 class="w-1/3 border p-2 bg-white" />
             <FilterList :lista="genders" title="Género" :listOpen="listStore.materials"
                 class="w-1/3 border p-2 bg-white" />
-        </div>
-        <div class="product-container w-full lg:w-4/5">
-            <p v-if="products.length == 0">No hay productos</p>
-            <ProductCard v-for="(product, index) in products" :key="index" :product="product" />
         </div> -->
+            <div class="product-container w-full">
+                <p v-if="products.length == 0">No hay productos</p>
+                <ProductCard v-for="(product, index) in products" :key="index" :product="product" />
+            </div>
         </div>
     </div>
 </template>
