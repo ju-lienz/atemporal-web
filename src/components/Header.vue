@@ -5,11 +5,10 @@
                 <h1 class="atemporal">Atemporal</h1>
             </RouterLink>
             <ul>
-                <li>Relojes</li>
+                <router-link :to="{ name: 'category', params: { name: cardMarroquineria.text } }">Relojes</router-link>
                 <li>Accesorios </li>
                 <li>Ofertas</li>
                 <li>Nosotros</li>
-                <li>Accesorios</li>
             </ul>
             <ul>
                 <a v-if="authStore.user != null" @click="authStore.logout">Cerrar sesión</a>
