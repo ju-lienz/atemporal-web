@@ -42,6 +42,7 @@ import { useAuthStore } from '@/stores/authStore'
 import Product from '@/components/cart/Product.vue';
 import { computed } from 'vue';
 import { useRouter } from 'vue-router';
+import Swal from 'sweetalert2';
 
 const store = useCartStore()
 const products = computed(() => store.cart);
@@ -51,6 +52,11 @@ const router = useRouter();
 
 function finalizarCompra() {
     if (authStore.user != null) {
+        Swal.fire({
+            icon: 'warning',
+            title: 'Debes iniciar sesión',
+            timer: 1000 
+        })
         store.sendProducts();
         return
     }
