@@ -1,7 +1,7 @@
 <template>
     <div class="container !py-28 flex-wrap min-h-screen">
         <div class="image-container w-full  md:w-1/2">
-            <img :src="`http://127.0.0.1:8000/storage/${product.producto_imagen}`" alt=""
+            <img :src="imagen" alt=""
                 class="primary-image aspect-square overflow-hidden object-cover rounded-md">
         </div>
         <div class="text-container pt-1 md:pl-10 w-full md:w-1/2 md:max-w-lg">
@@ -29,21 +29,24 @@
 import ShoppingCartIcon from '@/assets/icons/ShoppingCartIcon.vue';
 import { ClienteAxios } from '@/config/ClienteAxios';
 import { useCartStore } from '@/stores/cartStore';
-import { onBeforeMount, ref } from 'vue';
+import { onBeforeMount, ref, computed } from 'vue';
 import { useRoute } from 'vue-router'
 
 const route = useRoute();
-
 const product = ref({})
 const store = useCartStore();
 
+const imagen = computed(() => {
+    return `${import.meta.env.VITE_API_URL}/storage/${product.value.producto_imagen}`
+})
 
 onBeforeMount(async () => {
-
-    const id = route.params.id;
-    const response = await ClienteAxios.get(`Productos/${id}`);
-    if (response.status == 200) {
-        product.value = response.data
+    try {
+        const { id } = route.params;
+        const { data } = await ClienteAxios.get(`Productos/${id}`);
+        product.value = data;
+    } catch (error) {
+        console.error('Error fetching product:', error);
     }
 });
 

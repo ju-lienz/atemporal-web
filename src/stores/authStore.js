@@ -22,35 +22,43 @@ export const useAuthStore = defineStore("auth", () => {
   }
 
   async function register(formData) {
-    const res = await ClienteAxios.post("Clientes/Crear", formData);
-    console.log(res);
-    if (res.data.status === "OK") {
+    try {
+      const res = await ClienteAxios.post("Clientes/Crear", formData);
+
+      if (res.status == 200) {
+        Swal.fire({
+          title: "Cuenta registrada",
+          text: "Tu cuenta ha sido registrada correctamente",
+          icon: "success",
+        });
+        await obtenerUsuario();
+      }
+    } catch (error) {
       Swal.fire({
-        title: "Cuenta registrada",
-        text: "Tu cuenta ha sido registrada correctamente",
-        icon: "success",
+        title: "Registro erróneo",
+        icon: "error",
       });
-      await obtenerUsuario();
     }
   }
 
   async function login(formData) {
-    const res = await ClienteAxios.post("Clientes/Login", formData);
-    console.log("respuesta: ", res);
-    if (res.data.status === "OK") {
+    try {
+      const res = await ClienteAxios.post("Clientes/Login", formData);
+      console.log(res);
+      if (res.status == 200) {
+        Swal.fire({
+          title: "Inicio exitoso",
+          icon: "success",
+        });
+        await obtenerUsuario();
+        return;
+      }
+    } catch (error) {
       Swal.fire({
-        title: "Inicio exitoso",
-        // text: `El producto ${productToAdd.producto_nombre} fue agregado correctamente a tu carrito.`,
-        icon: "success",
+        title: "Ingreso erróneo",
+        icon: "error",
       });
-      await obtenerUsuario();
-      return;
     }
-    Swal.fire({
-      title: "Ingreso erróneo",
-      // text: `El producto ${productToAdd.producto_nombre} fue agregado correctamente a tu carrito.`,
-      icon: "error",
-    });
   }
 
   async function logout() {
