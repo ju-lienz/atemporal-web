@@ -41,7 +41,7 @@ const props = defineProps({
         default: false
     }
 })
-const imagen = ref(`${import.meta.env.VITE_API_URL}/${props.product.producto_imagen}`)
+const imagen = ref(`${import.meta.env.VITE_API_URL}/storage/${props.product.producto_imagen}`)
 </script>
 <style scoped>
 .card {

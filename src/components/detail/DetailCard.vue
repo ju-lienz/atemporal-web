@@ -37,7 +37,7 @@ const product = ref({})
 const store = useCartStore();
 
 const imagen = computed(() => {
-    return `${import.meta.env.VITE_API_URL}/${product.value.producto_imagen}`
+    return `${import.meta.env.VITE_API_URL}/storage/${product.value.producto_imagen}`
 })
 
 onBeforeMount(async () => {
