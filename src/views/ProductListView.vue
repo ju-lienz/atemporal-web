@@ -33,7 +33,7 @@
         </div> -->
             <div class="product-container w-full">
                 <p v-if="products.length == 0">No hay productos</p>
-                <ProductCard v-for="(product, index) in products" :key="index" :product="product" />
+                <ProductCard v-else v-for="(product, index) in products" :key="index" :product="product" />
             </div>
         </div>
     </div>
