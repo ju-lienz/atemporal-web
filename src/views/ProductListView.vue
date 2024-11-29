@@ -36,6 +36,7 @@
             <ProductCard v-for="(product, index) in products" :key="index" :product="product" />
         </div> -->
         </div>
+    </div>
 </template>
 <script setup>
 import ProductCard from '@/components/ProductCard.vue';
