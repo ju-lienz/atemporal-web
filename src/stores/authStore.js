@@ -35,11 +35,9 @@ export const useAuthStore = defineStore("auth", () => {
 
   async function login(formData) {
     const res = await ClienteAxios.post("Clientes/Login", formData);
-    console.log("respuesta: ", res);
-    if (res.data.status === "OK") {
+    if (res.data.statusCode === 200) {
       Swal.fire({
         title: "Inicio exitoso",
-        // text: `El producto ${productToAdd.producto_nombre} fue agregado correctamente a tu carrito.`,
         icon: "success",
       });
       await obtenerUsuario();
@@ -47,7 +45,6 @@ export const useAuthStore = defineStore("auth", () => {
     }
     Swal.fire({
       title: "Ingreso erróneo",
-      // text: `El producto ${productToAdd.producto_nombre} fue agregado correctamente a tu carrito.`,
       icon: "error",
     });
   }

@@ -3,17 +3,17 @@
         <form class="bg-white  shadow-md rounded-xl px-8 pt-6 pb-8 mb-4 w-full max-w-xl" @submit.prevent="sendForm">
             <h1 class="mb-4 font-bold text-2xl text-stone-800">Iniciar sesión</h1>
             <!-- mensaje de inicio de sesion incorrecto -->
-            <div v-if="error && !loginSuccess" class="bg-red-100 border-l-4 border-red-500 text-orange-700 p-2 mb-4"
+            <!-- <div v-if="error && !loginSuccess" class="bg-red-100 border-l-4 border-red-500 text-orange-700 p-2 mb-4"
                 role="alert">
                 <p class="font-bold m-2 text-sm">Error</p>
                 <p class="m-2 text-sm">El mail o contraseña son incorrectos</p>
-            </div>
+            </div> -->
             <!-- mensaje de inicio de sesion correcto -->
-            <div v-if="loginSuccess && !error" class="bg-green-100 border-l-4 border-green-600 text-green-700 p-2 mb-4"
+            <!-- <div v-if="loginSuccess && !error" class="bg-green-100 border-l-4 border-green-600 text-green-700 p-2 mb-4"
                 role="alert">
                 <p class="font-bold m-2 text-sm">¡Éxito!</p>
                 <p class="m-2 text-sm">Has iniciado sesión correctamente</p>
-            </div>
+            </div> -->
             <div class="mb-4">
                 <label class="block text-gray-700 text-sm font-medium mb-2" for="username">
                     E-mail:
