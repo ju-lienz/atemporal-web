@@ -5,7 +5,7 @@
                 <h1 class="atemporal">Atemporal</h1>
             </RouterLink>
             <ul>
-                <router-link :to="{ name: 'category', params: { name: cardMarroquineria.text } }">Relojes</router-link>
+                <router-link :to="{ name: 'category', params: 'Relojes' }">Relojes</router-link>
                 <li>Accesorios </li>
                 <li>Ofertas</li>
                 <li>Nosotros</li>
